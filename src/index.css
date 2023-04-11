@@ -46,13 +46,52 @@ table {
 	border-spacing: 0;
 
 }
-@font-face {
-  font-family: 'Mantinia-Regular';
-  src: url('../public/fonts/Mantinia Regular.otf');
-}
 
 html {
-    font-family: 'Mantinia-Regular', sans-serif;
+    font-family: 'EB Garamond', sans-serif;
 }
 
+.App {
+    position: relative;
+    min-height: 100vh;
+    background-color: #010301;
+    color: white;
+}
 
+.navbar_container{
+    height: 100%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+button {
+  display: block;
+  width: 100%;
+  height: 4vh;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(10, 10, 10, 1) 1%,
+    rgba(25, 21, 18, 1) 10%,
+    rgba(25, 21, 18, 1) 90%,
+    rgba(10, 10, 10, 1) 99%,
+    rgba(10, 10, 10, 1) 100%
+  );
+  color: var(--primary-text-color);
+  border: none;
+  outline: none;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(10, 10, 10, 1) 1%,
+    rgba(51, 49, 37, 1) 10%,
+    rgba(51, 49, 37, 1) 90%,
+    rgba(10, 10, 10, 1) 99%,
+    rgba(10, 10, 10, 1) 100%
+  );
+}
