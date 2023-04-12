@@ -95,3 +95,17 @@ button:hover {
     rgba(10, 10, 10, 1) 100%
   );
 }
+
+.strategy-btn {
+    background-color: #010301;
+    bottom: 44px;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+}
+
+.strategy-btn img {
+    width: 75%;
+}
