@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div>Placeholder button</div>
+      <div className='organizerBtn'>Placeholder button</div>
     </div>
   );
 }
