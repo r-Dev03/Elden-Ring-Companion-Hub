@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div><img src='./Humanity.jpg'> </img></div>
+      <div>Placeholder button</div>
     </div>
   );
 }
