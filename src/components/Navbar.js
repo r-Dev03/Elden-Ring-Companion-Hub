@@ -3,7 +3,7 @@
 const Navbar = () => {
     return (
         <div className="navbar_container">
-        <button>Bosses</button>
+        <button>Bosses <span className="navsprite"></span></button>
         <button>Areas</button>
         <button>Crafting</button>
         <button>Weapons</button>

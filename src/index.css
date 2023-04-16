@@ -99,3 +99,13 @@ button:hover {
 .organizerBtn { 
 
 }
+
+.navsprite {
+    background-image: url(../src/components/navsprite.png);
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
