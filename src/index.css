@@ -110,6 +110,22 @@ button:hover {
     margin-right: 5px;
 }
 
-.navsprite .bosses {
+.navsprite.bosses {
+    background-position: -74px 0;
+    margin-left: 10px;
+}
 
+.navsprite.areas {
+    background-position: -185px 0;
+    margin-left: 10px;
+}
+
+.navsprite.crafting {
+    background-position: -37px;
+    margin-left: 10px;
+}
+
+.navsprite.weapons {
+     background-position: -111px 0;
+    margin-left: 10px;
 }

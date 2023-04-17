@@ -3,10 +3,10 @@
 const Navbar = () => {
     return (
         <div className="navbar_container">
-        <button>Bosses <span className="navsprite"></span></button>
-        <button>Areas</button>
-        <button>Crafting</button>
-        <button>Weapons</button>
+            <button> <span className="navsprite bosses"></span></button>
+            <button> <span className="navsprite areas"></span></button>
+            <button> <span className="navsprite crafting"></span></button>
+            <button><span className="navsprite weapons"></span></button>
         </div>
     )
 }
