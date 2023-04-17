@@ -3,12 +3,14 @@ import React from 'react';
 import Navbar from './components/Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <Navbar />
-      <div className='organizerBtn'>Placeholder button</div>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Navbar />
+            <div className='oBtnContainer'>
+                <button className='organizerBtn'>Organizer</button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
