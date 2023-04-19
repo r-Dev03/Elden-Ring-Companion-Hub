@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,8 +48,8 @@ table {
 
 }
 
-* {
-    font-family: 'EB Garamond', serif;
+*, html {
+    font-family: 'Shadows Into Light', cursive;
 }
 
 .App {
@@ -105,11 +106,13 @@ table {
 }
 
 .organizerBtn {
+    bottom: 44px;
     cursor: pointer;
-    height: 100px;
-    border: solid 1px white;
-    border-radius: 15%;
-    background-color: grey;
+    position: fixed;
+    right: 20px;
+    height: 60px;
+    z-index: 3;
+    border-radius: 50%;
 }
 
 .navsprite {
