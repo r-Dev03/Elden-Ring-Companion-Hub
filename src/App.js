@@ -8,6 +8,7 @@ function App() {
             <Navbar />
             <div className='oBtnContainer'>
                 <button className='organizerBtn'>Organizer</button>
+                <Form />
             </div>
         </div>
     );
