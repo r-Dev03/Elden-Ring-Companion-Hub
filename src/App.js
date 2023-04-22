@@ -1,7 +1,7 @@
 import './index.css';
 import React from 'react';
 import Navbar from './components/Navbar';
-import Form from './components/Form.js';
+import BossForm from './components/BossForm.js'
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
             <Navbar />
             <div className='oBtnContainer'>
                 <button className='organizerBtn'>Organizer</button>
-                <Form />
+                <BossForm />
             </div>
         </div>
     );
