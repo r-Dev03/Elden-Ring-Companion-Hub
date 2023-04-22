@@ -1,6 +1,7 @@
 import './index.css';
 import React from 'react';
 import Navbar from './components/Navbar';
+import Form from './components/Form.js';
 
 function App() {
     return (
