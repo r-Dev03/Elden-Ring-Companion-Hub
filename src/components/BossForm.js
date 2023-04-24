@@ -40,6 +40,7 @@ const BossForm = ({ BossLog }) => {
                     value={bossType}
                     onChange={(e) => setBossType(e.target.value)}
                 />
+                
             </div>
             <input type='submit' value='Save Boss Log' className='btn btn-block' />
         </form>
