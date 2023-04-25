@@ -35,12 +35,20 @@ const BossForm = ({ BossLog }) => {
             <div className='form-control'>
                 <label>Boss Type</label>
                 <input
-                    type='select'
+                    type='text'
                     placeholder='Melee'
                     value={bossType}
                     onChange={(e) => setBossType(e.target.value)}
                 />
-                
+            </div>
+            <div className='form-control'>
+                <label>Boss Info</label>
+                <input
+                    type='text'
+                    placeholder='Three attack waves, Jumps after'
+                    value={bossInfo}
+                    onChange={(e) => setBossInfo(e.target.value)}
+                />
             </div>
             <input type='submit' value='Save Boss Log' className='btn btn-block' />
         </form>
