@@ -151,9 +151,13 @@ table {
      background-position: -111px 0;
     margin-left: 10px;
 }
+
+.navsprite.paper {
+    background-position: -222px 0;
+    margin-left: 10px;
+}
 .form {
     width: 400px;
-    height: 400px;
     margin: 0 auto;
 }
 
@@ -172,4 +176,8 @@ table {
   padding: 3px 7px;
   font-size: 17px;
 }
-
+textarea {
+    margin-bottom: 20px;
+    height:150px;
+    width: 418px;
+}

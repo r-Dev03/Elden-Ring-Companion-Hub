@@ -22,7 +22,7 @@ const BossForm = ({ BossLog }) => {
     }
 
     return (
-        <form className='form' onSubmit={onSubmit}>
+        <form className='form'  id="boss-form" onSubmit={onSubmit}>
             <div className='form-control'>
                 <label>Boss Name</label>
                 <input
@@ -43,13 +43,10 @@ const BossForm = ({ BossLog }) => {
             </div>
             <div className='form-control'>
                 <label>Boss Info</label>
-                <input
-                    type='text'
-                    placeholder='Three attack waves, Jumps after'
-                    value={bossInfo}
-                    onChange={(e) => setBossInfo(e.target.value)}
-                />
             </div>
+        <textarea  form='boss-form' placeholder='Three attack waves, and jumps after' value={bossInfo} onChange = {(e) => setBossInfo(e.target.value)}>
+
+        </textarea>
             <input type='submit' value='Save Boss Log' className='btn btn-block' />
         </form>
     )

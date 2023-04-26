@@ -5,15 +5,13 @@ import { useState, useEffect } from 'react'
 import BossForm from './components/BossForm.js'
 
 function App() {
-     const [showBossForm, setShowBossForm] = useState(false)
+    const [showBossForm, setShowBossForm] = useState(false)
 
     return (
         <div className="App">
             <Navbar />
-            <div>
-                <button className='organizerBtn'>Organizer</button>
-                <BossForm />
-            </div>
+            <BossForm />
+            <button className='organizerBtn'>Organizer</button>
         </div>
     );
 }
