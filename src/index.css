@@ -66,6 +66,17 @@ table {
     justify-content: space-evenly;
 }
 
+a {
+    width: 100%;
+    color: inherit;
+    padding: none;
+    margin: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
