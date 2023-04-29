@@ -190,5 +190,6 @@ a:link, a:visited, a:hover, a:active {
 textarea {
     margin-bottom: 20px;
     height:150px;
+    font-size: 17px;
     width: 418px;
 }

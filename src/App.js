@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react'
 import BossForm from './components/BossForm.js'
+import AreaForm from './components/AreaForm';
+import CraftingForm from './components/CraftingForm';
 
 function App() {
     return (
@@ -26,14 +28,14 @@ function App() {
                         <>
                             <Navbar />
                             <button className='organizerBtn'>Organizer</button>
-                            <h1> Information about areas will be here</h1>
+                            <AreaForm />
                         </>
                     } />
                     <Route path='/Crafting' element={
                         <>
                             <Navbar />
                             <button className='organizerBtn'>Organizer</button>
-                            <h1>Crafting information will be here</h1>
+                            <CraftingForm />
                         </>
                     } />
                     <Route path='/CheatSheet' element={
