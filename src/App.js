@@ -8,6 +8,8 @@ import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';
 
 function App() {
+    
+
     return (
         <Router>
             <div className="App">
@@ -21,7 +23,7 @@ function App() {
                         <>
                             <Navbar />
                             <button className='organizerBtn'>Organizer</button>
-                            <BossForm />
+                            <BossForm/>
                         </>
                     } />
                     <Route path='/Areas' element={

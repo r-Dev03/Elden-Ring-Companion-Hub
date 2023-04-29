@@ -10,7 +10,7 @@ const BossForm = ({ BossLog }) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
-        if (!bossInfo) {
+        if (!bossName) {
             alert('Stop dying to bosses and strategize a little')
             return
         }
@@ -29,6 +29,7 @@ const BossForm = ({ BossLog }) => {
             <div className='form-control'>
                 <label>Boss Name</label>
                 <input
+                    id='bossName'
                     type='text'
                     placeholder='Radahn'
                     value={bossName}
