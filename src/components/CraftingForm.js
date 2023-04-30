@@ -7,7 +7,7 @@ const CraftingForm = ({ CraftingLog }) => {
     const [craftingRecipe, setCraftingRecipe] = useState('')
     const [itemInfo, setItemInfo] = useState('')
 
-    const onSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         if (!itemInfo) {
@@ -23,7 +23,7 @@ const CraftingForm = ({ CraftingLog }) => {
     }
 
     return (
-        <form className='form' id="crafting-form" onSubmit={onSubmit}>
+        <form className='form' id="crafting-form" onSubmit={handleSubmit}>
             <div className='form-control'>
                 <label>Item Name</label>
                 <input

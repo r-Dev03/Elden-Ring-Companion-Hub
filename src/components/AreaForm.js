@@ -7,7 +7,7 @@ const AreaForm = ({ AreaLog }) => {
     const [commonEnemies, setCommonEnemies] = useState('')
     const [areaInfo, setAreaInfo] = useState('')
 
-    const onSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         if (!areaInfo) {
@@ -24,7 +24,7 @@ const AreaForm = ({ AreaLog }) => {
     }
 
     return (
-        <form className='form' id="area-form" onSubmit={onSubmit}>
+        <form className='form' id="area-form" onSubmit={handleSubmit}>
             <div className='form-control'>
                 <label>Area Name</label>
                 <input

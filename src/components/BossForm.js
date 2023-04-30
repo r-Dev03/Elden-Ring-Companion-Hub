@@ -7,7 +7,7 @@ const BossForm = ({ BossLog }) => {
     const [bossAttackPatterns, setBossAttackPatterns] = useState('')
     const [bossCounterAttacks, setBossCounterAttacks] = useState('')
 
-    const onSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         if (!bossName) {
@@ -15,7 +15,7 @@ const BossForm = ({ BossLog }) => {
             return
         }
 
-        BossLog({ bossName, bossType, bossInfo, bossAttackPatterns, bossCounterAttacks})
+        BossLog({ bossName, bossType, bossInfo, bossAttackPatterns, bossCounterAttacks })
 
         setBossName('')
         setBossType('')
@@ -24,12 +24,24 @@ const BossForm = ({ BossLog }) => {
         setBossCounterAttacks('')
     }
 
+    function BossLog() {
+        let boss = {
+            'bossName': bossName,
+            'bossType': bossType,
+            'bossAttackPatterns': bossAttackPatterns,
+            'bossCounterAttacks': bossCounterAttacks,
+            'bossInfo': bossInfo,
+        }
+
+        const id = String(Math.ceil(Math.random() * 999999))
+        window.localStorage.setItem(id, JSON.stringify(boss))
+    }
+
     return (
-        <form className='form'  id="boss-form" onSubmit={onSubmit}>
+        <form className='form' id="boss-form" onSubmit={handleSubmit}>
             <div className='form-control'>
                 <label>Boss Name</label>
                 <input
-                    id='bossName'
                     type='text'
                     placeholder='Radahn'
                     value={bossName}
@@ -66,9 +78,9 @@ const BossForm = ({ BossLog }) => {
             <div className='form-control'>
                 <label>Boss Info</label>
             </div>
-        <textarea  form='boss-form' placeholder='Starts off shooting gravitational arrows, scale up while summoning allies' value={bossInfo} onChange = {(e) => setBossInfo(e.target.value)}>
+            <textarea form='boss-form' placeholder='Starts off shooting gravitational arrows, scale up while summoning allies' value={bossInfo} onChange={(e) => setBossInfo(e.target.value)}>
 
-        </textarea>
+            </textarea>
             <input type='submit' value='Save Boss Log' className='btn btn-block' />
         </form>
     )

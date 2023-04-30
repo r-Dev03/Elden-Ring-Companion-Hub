@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react'
 import BossForm from './components/BossForm.js'
+import { BossLog } from './components/BossForm.js'
 import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';
 
 function App() {
-    
 
     return (
         <Router>
@@ -23,7 +23,7 @@ function App() {
                         <>
                             <Navbar />
                             <button className='organizerBtn'>Organizer</button>
-                            <BossForm/>
+                            <BossForm />
                         </>
                     } />
                     <Route path='/Areas' element={
