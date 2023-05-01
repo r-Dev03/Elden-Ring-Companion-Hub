@@ -1,10 +1,11 @@
 
 import { useState } from "react";
 
-const CraftingForm = ({ CraftingLog }) => {
+const CraftingForm = () => {
 
     const [itemName, setItemName] = useState('')
     const [craftingRecipe, setCraftingRecipe] = useState('')
+    const [materialLocations, setMateralLocations] = useState('')
     const [itemInfo, setItemInfo] = useState('')
 
     const handleSubmit = (e) => {
@@ -15,11 +16,25 @@ const CraftingForm = ({ CraftingLog }) => {
             return
         }
 
-        CraftingLog({ itemName, craftingRecipe, itemInfo})
+        craftingLog({ itemName, craftingRecipe, itemInfo})
 
         setItemName('')
         setCraftingRecipe('')
+        setMateralLocations('')
         setItemInfo('')
+    }
+
+    
+    function craftingLog() {
+        let item = {
+            'itemName': itemName,
+            'craftingRecipe': craftingRecipe,
+            'materialLocations' : materialLocations,
+            'itemInfo': itemInfo,
+        }
+
+        const id = String(Math.ceil(Math.random() * 999999))
+        window.localStorage.setItem(id, JSON.stringify(item))
     }
 
     return (
@@ -40,6 +55,15 @@ const CraftingForm = ({ CraftingLog }) => {
                     placeholder='Crafting Recipe'
                     value={craftingRecipe}
                     onChange={(e) => setCraftingRecipe(e.target.value)}
+                />
+            </div>
+            <div className='form-control'>
+                <label>Material Locations</label>
+                <input
+                    type='text'
+                    placeholder='Limgrave'
+                    value={materialLocations}
+                    onChange={(e) => setMateralLocations(e.target.value)}
                 />
             </div>
             <div className='form-control'>

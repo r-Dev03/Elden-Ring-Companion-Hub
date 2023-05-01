@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AreaForm = ({ AreaLog }) => {
+const AreaForm = () => {
 
     const [areaName, setAreaName] = useState('')
     const [areaQuirks, setAreaQuirks] = useState('')
@@ -15,12 +15,24 @@ const AreaForm = ({ AreaLog }) => {
             return
         }
 
-        AreaLog({ areaName, areaQuirks, areaInfo})
+        areaLog({ areaName, areaQuirks, areaInfo })
 
         setAreaName('')
         setAreaQuirks('')
         setCommonEnemies('')
         setAreaInfo('')
+    }
+
+    function areaLog() {
+        let area = {
+            'areaName': areaName,
+            'areaQuirks': areaQuirks,
+            'commonEnemies': commonEnemies,
+            'areaInfo': areaInfo
+        }
+
+        const id = String(Math.ceil(Math.random() * 999999))
+        window.localStorage.setItem(id, JSON.stringify(area))
     }
 
     return (

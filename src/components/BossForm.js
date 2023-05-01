@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const BossForm = ({ BossLog }) => {
+const BossForm = () => {
     const [bossName, setBossName] = useState('')
     const [bossType, setBossType] = useState('')
     const [bossInfo, setBossInfo] = useState('')
@@ -15,7 +15,7 @@ const BossForm = ({ BossLog }) => {
             return
         }
 
-        BossLog({ bossName, bossType, bossInfo, bossAttackPatterns, bossCounterAttacks })
+        bossLog({ bossName, bossType, bossInfo, bossAttackPatterns, bossCounterAttacks })
 
         setBossName('')
         setBossType('')
@@ -24,7 +24,7 @@ const BossForm = ({ BossLog }) => {
         setBossCounterAttacks('')
     }
 
-    function BossLog() {
+    function bossLog() {
         let boss = {
             'bossName': bossName,
             'bossType': bossType,

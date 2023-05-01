@@ -4,11 +4,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import { useState, useEffect } from 'react'
 import BossForm from './components/BossForm.js'
-import { BossLog } from './components/BossForm.js'
 import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';
 
 function App() {
+
+    const keys = Object.keys(localStorage)
+    for (let key of keys) {
+        console.log(`${key}: ${localStorage.getItem(key)}`)
+    }
 
     return (
         <Router>
