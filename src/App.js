@@ -6,8 +6,10 @@ import { useState, useEffect } from 'react'
 import BossForm from './components/BossForm.js'
 import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';
+import Organizer from './components/Organizer';
 
 function App() {
+
 
     const keys = Object.keys(localStorage)
     for (let key of keys) {
@@ -48,7 +50,7 @@ function App() {
                         <>
                             <Navbar />
                             <button className='organizerBtn'>Organizer</button>
-                            <h1>Infoormation fetched from elden ring api will be here</h1>
+                            <Organizer />
                         </>
                     } />
                 </Routes>

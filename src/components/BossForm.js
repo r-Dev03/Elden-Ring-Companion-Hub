@@ -7,6 +7,7 @@ const BossForm = () => {
     const [bossAttackPatterns, setBossAttackPatterns] = useState('')
     const [bossCounterAttacks, setBossCounterAttacks] = useState('')
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -25,16 +26,27 @@ const BossForm = () => {
     }
 
     function bossLog() {
-        let boss = {
-            'bossName': bossName,
-            'bossType': bossType,
-            'bossAttackPatterns': bossAttackPatterns,
-            'bossCounterAttacks': bossCounterAttacks,
-            'bossInfo': bossInfo,
-        }
 
+        if (localStorage.getItem('bossLogs')) {
+
+        } else {
+            console.log('Creating storage for boss strategies...')
+            const bossLogs = []
+            localStorage.setItem('bossLogs', JSON.stringify(bossLogs))
+        }
         const id = String(Math.ceil(Math.random() * 999999))
-        window.localStorage.setItem(id, JSON.stringify(boss))
+
+        let boss = {
+            id: id,
+            bossName: bossName,
+            bossType: bossType,
+            bossAttackPatterns: bossAttackPatterns,
+            bossCounterAttacks: bossCounterAttacks,
+            bossInfo: bossInfo,
+        }
+        const log = JSON.parse(window.localStorage.getItem('bossLogs'))
+        log.push(boss)
+        window.localStorage.setItem('bossLogs', JSON.stringify(log))
     }
 
     return (
