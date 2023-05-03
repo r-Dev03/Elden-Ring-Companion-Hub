@@ -16,7 +16,7 @@ const CraftingForm = () => {
             return
         }
 
-        craftingLog({ itemName, craftingRecipe, itemInfo})
+        craftingLog({ itemName, craftingRecipe, itemInfo })
 
         setItemName('')
         setCraftingRecipe('')
@@ -24,18 +24,31 @@ const CraftingForm = () => {
         setItemInfo('')
     }
 
-    
+
     function craftingLog() {
+
+        if (localStorage.getItem('craftingLogs')) {
+
+        } else {
+            console.log('Creating storage for crafting based strategies...')
+            const craftingLogs = []
+            localStorage.setItem('craftingLogs', JSON.stringify(craftingLogs))
+        }
+        const id = String(Math.ceil(Math.random() * 999999))
+
         let item = {
+            'id': id,
             'itemName': itemName,
             'craftingRecipe': craftingRecipe,
-            'materialLocations' : materialLocations,
+            'materialLocations': materialLocations,
             'itemInfo': itemInfo,
         }
 
-        const id = String(Math.ceil(Math.random() * 999999))
-        window.localStorage.setItem(id, JSON.stringify(item))
+        const log = JSON.parse(window.localStorage.getItem('craftingLogs'))
+        log.push(item)
+        window.localStorage.setItem('craftingLogs', JSON.stringify(log))
     }
+
 
     return (
         <form className='form' id="crafting-form" onSubmit={handleSubmit}>
@@ -67,7 +80,7 @@ const CraftingForm = () => {
                 />
             </div>
             <div className='form-control'>
-                <label>Crafting Recipe / Materials Info</label>
+                <label>Item Info</label>
             </div>
             <textarea form='crafting-form' placeholder='Found near Liurnia of Lakes' value={itemInfo} onChange={(e) => setItemInfo(e.target.value)}>
 

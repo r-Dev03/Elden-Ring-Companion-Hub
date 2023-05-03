@@ -24,15 +24,27 @@ const AreaForm = () => {
     }
 
     function areaLog() {
+
+        if (localStorage.getItem('areaLogs')) {
+
+        } else {
+            console.log('Creating storage for area based strategies...')
+            const areaLogs = []
+            localStorage.setItem('areaLogs', JSON.stringify(areaLogs))
+        }
+        const id = String(Math.ceil(Math.random() * 999999))
+
         let area = {
+            'id' : id,
             'areaName': areaName,
             'areaQuirks': areaQuirks,
             'commonEnemies': commonEnemies,
             'areaInfo': areaInfo
         }
 
-        const id = String(Math.ceil(Math.random() * 999999))
-        window.localStorage.setItem(id, JSON.stringify(area))
+        const log = JSON.parse(window.localStorage.getItem('areaLogs'))
+        log.push(area)
+        window.localStorage.setItem('areaLogs', JSON.stringify(log))
     }
 
     return (
