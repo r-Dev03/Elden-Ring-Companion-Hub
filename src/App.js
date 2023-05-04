@@ -10,12 +10,6 @@ import Organizer from './components/Organizer';
 
 function App() {
 
-
-    const keys = Object.keys(localStorage)
-    for (let key of keys) {
-        console.log(`${key}: ${localStorage.getItem(key)}`)
-    }
-
     return (
         <Router>
             <div className="App">
@@ -50,7 +44,7 @@ function App() {
                         <>
                             <Navbar />
                             <button className='organizerBtn'>Organizer</button>
-                            <Organizer />
+                        <Organizer />
                         </>
                     } />
                 </Routes>

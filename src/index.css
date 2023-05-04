@@ -224,3 +224,19 @@ textarea {
     justify-content: center;
     align-items: center;
 }
+
+.bossBook {
+    background-image: url(../src/components/bossBook.png);
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.areaBook {
+    background-image: url(../src/components/areaBook.png);
+    background-repeat: no-repeat;
+}
+
+.craftingBook {
+    background-image: url(../src/components/craftingBook.png);
+    background-repeat: no-repeat;
+}
