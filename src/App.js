@@ -7,6 +7,7 @@ import BossForm from './components/BossForm.js'
 import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';
 import Organizer from './components/Organizer';
+import { Link } from 'react-router-dom'
 
 function App() {
 
@@ -17,34 +18,48 @@ function App() {
                     <Route path='/' element={
                         <>
                             <Navbar />
-                            <button className='organizerBtn'>Organizer</button>
+                            <Link to={`/Logs`} >
+                                <button className='organizerBtn'>Organizer</button>
+                            </Link>
                         </>} />
                     <Route path='/Bosses' element={
                         <>
                             <Navbar />
-                            <button className='organizerBtn'>Organizer</button>
                             <BossForm />
+                            <Link to={`/Logs`} >
+                                <button className='organizerBtn'>Organizer</button>
+                            </Link>
                         </>
                     } />
                     <Route path='/Areas' element={
                         <>
                             <Navbar />
-                            <button className='organizerBtn'>Organizer</button>
                             <AreaForm />
+                            <Link to={`/Logs`} >
+                                <button className='organizerBtn'>Organizer</button>
+                            </Link>
                         </>
                     } />
                     <Route path='/Crafting' element={
                         <>
                             <Navbar />
-                            <button className='organizerBtn'>Organizer</button>
                             <CraftingForm />
+                            <Link to={`/Logs`} >
+                                <button className='organizerBtn'>Organizer</button>
+                            </Link>
                         </>
                     } />
                     <Route path='/CheatSheet' element={
                         <>
                             <Navbar />
-                            <button className='organizerBtn'>Organizer</button>
-                        <Organizer />
+                            <Link to={`/Logs`} >
+                                <button className='organizerBtn'>Organizer</button>
+                            </Link>
+                        </>
+                    } />
+                    <Route path='/Logs' element={
+                        <>
+                            <Organizer />
                         </>
                     } />
                 </Routes>
