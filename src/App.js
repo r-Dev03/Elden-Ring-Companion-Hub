@@ -53,6 +53,7 @@ function App() {
                         <>
                             <Navbar />
                             <Link to={`/Logs`} >
+                                <h1>Elden ring api that gets fetched.</h1>
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>
                         </>
