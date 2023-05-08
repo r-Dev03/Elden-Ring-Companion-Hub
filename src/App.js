@@ -8,6 +8,7 @@ import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';
 import Organizer from './components/Organizer';
 import { Link } from 'react-router-dom'
+import CheatSheet from './components/CheatSheet';
 
 function App() {
 
@@ -53,9 +54,10 @@ function App() {
                         <>
                             <Navbar />
                             <Link to={`/Logs`} >
-                                <h1>Elden ring api that gets fetched.</h1>
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>
+                            <h2>https://eldenring.fanapis.com/api/items?limit=2</h2>
+                            <CheatSheet />
                         </>
                     } />
                     <Route path='/Logs' element={
