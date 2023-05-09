@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Organizer = () => {
     const areaLogs = JSON.parse(window.localStorage.getItem('areaLogs'))
     const bossLogs = JSON.parse(window.localStorage.getItem('bossLogs'))
     const craftingLogs = JSON.parse(window.localStorage.getItem('craftingLogs'))
+    const [showLog, setShowLog] = useState(false)
 
+    function toggleLog() {
+        setShowLog(!showLog)
+    }
 
     //here is the return for the Organizer
     return (
@@ -13,9 +17,9 @@ const Organizer = () => {
                 {bossLogs ? bossLogs.map(el => {
                     //here's the return for the loop
                     return (
-                        <div className="bossLogsContainer">
+                        <div className="bossLogsContainer" onClick={toggleLog}>
                         <img src="https://res.cloudinary.com/dtyc44fjq/image/upload/v1683236340/Crafting__Book2_s6sxjr.png"></img>
-                            <div className="boss" key={el.id}>
+                            <div className={showLog ? "showLog" : "hideLog"} key={el.id}>
                                 <p> Boss Name: {el.bossName}</p>
                                 <p> Boss Type: {el.bossType}</p>
                                 <p> Attack Patterns: {el.bossAttackPatterns}</p>

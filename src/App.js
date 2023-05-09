@@ -62,6 +62,7 @@ function App() {
                     } />
                     <Route path='/Logs' element={
                         <>
+                            <Navbar />
                             <Organizer />
                         </>
                     } />
