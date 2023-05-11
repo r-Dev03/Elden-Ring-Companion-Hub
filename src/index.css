@@ -251,9 +251,10 @@ textarea {
 }
 
 .showLog {
-    border: solid 3px red;
+    border: solid 3px white;
+    
 } 
 
 .hideLog {
-    border: solid 3px blue;
+    display: none;
 }

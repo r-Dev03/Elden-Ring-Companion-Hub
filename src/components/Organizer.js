@@ -4,10 +4,10 @@ const Organizer = () => {
     const areaLogs = JSON.parse(window.localStorage.getItem('areaLogs'))
     const bossLogs = JSON.parse(window.localStorage.getItem('bossLogs'))
     const craftingLogs = JSON.parse(window.localStorage.getItem('craftingLogs'))
-    const [showLog, setShowLog] = useState(false)
+    const [selectedLog, setSelectedLog] = useState('')
 
-    function toggleLog() {
-        setShowLog(!showLog)
+    function toggleLog(id) {
+        selectedLog == id ? setSelectedLog('') : setSelectedLog(id)
     }
 
     //here is the return for the Organizer
@@ -17,9 +17,9 @@ const Organizer = () => {
                 {bossLogs ? bossLogs.map(el => {
                     //here's the return for the loop
                     return (
-                        <div className="bossLogsContainer" onClick={toggleLog}>
-                            <button className="button">{el.bossName}</button>
-                            <div className={showLog ? "showLog" : "hideLog"} key={el.id}>
+                        <div className="bossLogsContainer">
+                        <button className="button" onClick={() => toggleLog(el.id)}>{el.bossName} Strategy</button>
+                            <div className={selectedLog == el.id ? "showLog" : "hideLog"} key={el.id}>
                                 <p> Boss Name: {el.bossName}</p>
                                 <p> Boss Type: {el.bossType}</p>
                                 <p> Attack Patterns: {el.bossAttackPatterns}</p>
