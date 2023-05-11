@@ -19,7 +19,7 @@ const Organizer = () => {
                     return (
                         <div className="bossLogsContainer">
                         <button className="button" onClick={() => toggleLog(el.id)}>{el.bossName} Strategy</button>
-                            <div className={selectedLog == el.id ? "showLog" : "hideLog"} key={el.id}>
+                            <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                 <p> Boss Name: {el.bossName}</p>
                                 <p> Boss Type: {el.bossType}</p>
                                 <p> Attack Patterns: {el.bossAttackPatterns}</p>

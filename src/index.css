@@ -251,14 +251,14 @@ textarea {
     height: 100px;
 }
 
-.showLog {
-      border: solid 3px white;
-      opacity: 100%;
-      transition: ease-in 0.2s;
-    
+.openLog {
+      border: solid 4px yellow;
+      z-index: 1;
+      position: fixed;
+      color: black;
+      background-color: white;
 } 
 
 .hideLog {
-    opacity: 0;
-    transition: ease-out 0.2s;
+   display: none; 
 }
