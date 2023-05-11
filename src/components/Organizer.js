@@ -18,6 +18,7 @@ const Organizer = () => {
                     //here's the return for the loop
                     return (
                         <div className="bossLogsContainer" onClick={toggleLog}>
+                            <button className="button">{el.bossName}</button>
                             <div className={showLog ? "showLog" : "hideLog"} key={el.id}>
                                 <p> Boss Name: {el.bossName}</p>
                                 <p> Boss Type: {el.bossType}</p>

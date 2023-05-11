@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -49,8 +50,11 @@ table {
 }
 
 *, html {
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Indie Flower', cursive;
 }
+
+
+
 
 .App {
     position: relative;
@@ -208,6 +212,7 @@ textarea {
     width: 33%;
     height: 100px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }

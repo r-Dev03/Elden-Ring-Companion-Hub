@@ -56,7 +56,6 @@ function App() {
                             <Link to={`/Logs`} >
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>
-                            <h2>https://eldenring.fanapis.com/api/items?limit=2</h2>
                             <CheatSheet />
                         </>
                     } />
