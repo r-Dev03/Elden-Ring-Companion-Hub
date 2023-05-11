@@ -18,7 +18,6 @@ const Organizer = () => {
                     //here's the return for the loop
                     return (
                         <div className="bossLogsContainer" onClick={toggleLog}>
-                        <img src="https://res.cloudinary.com/dtyc44fjq/image/upload/v1683236340/Crafting__Book2_s6sxjr.png"></img>
                             <div className={showLog ? "showLog" : "hideLog"} key={el.id}>
                                 <p> Boss Name: {el.bossName}</p>
                                 <p> Boss Type: {el.bossType}</p>
@@ -33,7 +32,6 @@ const Organizer = () => {
                 {areaLogs ? areaLogs.map(el => {
                     return (
                         <div className="areaLogsContainer">
-                        <img src="https://res.cloudinary.com/dtyc44fjq/image/upload/v1683236340/Crafting_Book1_ahtlbr.png"></img>
                             <div className="area" key={el.id}>
                                 <p> Area Name: {el.areaName}</p>
                                 <p> Area Quirks: {el.areaQuirks}</p>
@@ -47,7 +45,6 @@ const Organizer = () => {
                 {craftingLogs ? craftingLogs.map(el => {
                     return (
                         <div className="craftingLogsContainer">
-                        <img src="https://res.cloudinary.com/dtyc44fjq/image/upload/v1683236340/Crafting_Book3_gtafbj.png"></img>
                             <div className="item" key={el.id}>
                                 <p> Item Name: {el.itemName}</p>
                                 <p> Crafting Recipe: {el.craftingRecipe}</p>
