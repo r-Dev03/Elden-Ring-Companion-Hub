@@ -209,6 +209,7 @@ textarea {
 
 .bossLogsContainer {
     margin: 20px;
+    padding-bottom: 60px;
     width: 33%;
     height: 100px;
     display: flex;
@@ -251,10 +252,13 @@ textarea {
 }
 
 .showLog {
-    border: solid 3px white;
+      border: solid 3px white;
+      opacity: 100%;
+      transition: ease-in 0.2s;
     
 } 
 
 .hideLog {
-    display: none;
+    opacity: 0;
+    transition: ease-out 0.2s;
 }
