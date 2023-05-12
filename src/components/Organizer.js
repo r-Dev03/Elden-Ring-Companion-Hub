@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaRegTimesCircle } from "react-icons/fa";
 
 const Organizer = () => {
     const areaLogs = JSON.parse(window.localStorage.getItem('areaLogs'))
@@ -18,8 +19,9 @@ const Organizer = () => {
                     //here's the return for the loop
                     return (
                         <div className="bossLogsContainer">
-                        <button className="button" onClick={() => toggleLog(el.id)}>{el.bossName} Strategy</button>
+                            <button className="button" onClick={() => toggleLog(el.id)}>{el.bossName} Strategy</button>
                             <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
+                                <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
                                 <p> Boss Name: {el.bossName}</p>
                                 <p> Boss Type: {el.bossType}</p>
                                 <p> Attack Patterns: {el.bossAttackPatterns}</p>
@@ -47,6 +49,7 @@ const Organizer = () => {
                     return (
                         <div className="craftingLogsContainer">
                             <div className="item" key={el.id}>
+                                <FaRegTimesCircle />
                                 <p> Item Name: {el.itemName}</p>
                                 <p> Crafting Recipe: {el.craftingRecipe}</p>
                                 <p> Material Locations: {el.materialLocations}</p>

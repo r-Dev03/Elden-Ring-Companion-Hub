@@ -200,7 +200,7 @@ textarea {
 
 .logsContainer {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,17 +211,13 @@ textarea {
     margin: 20px;
     padding-bottom: 60px;
     width: 33%;
-    height: 100px;
+    height: 200px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.bossLogsContainer img {
-    width: 30%;
-    height: 90px;
-}
 
 .areaLogsContainer {
     margin: 20px;
@@ -232,10 +228,6 @@ textarea {
     align-items: center;
 }
 
-.areaLogsContainer img {
-    width: 30%;
-    height: 90px;
-}
 
 .craftingLogsContainer {
     margin: 20px;
@@ -246,19 +238,24 @@ textarea {
     align-items: center;
 }
 
-.craftingLogsContainer img {
-    width: 30%;
-    height: 100px;
-}
 
 .openLog {
-      border: solid 4px yellow;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
       z-index: 1;
       position: fixed;
       color: black;
       background-color: white;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
 } 
 
 .hideLog {
    display: none; 
+}
+
+.close-btn{
+    align-self: flex-end;
 }
