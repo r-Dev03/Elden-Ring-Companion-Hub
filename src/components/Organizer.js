@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaRegTimesCircle } from "react-icons/fa";
+import BossForm from "./BossForm";
 
 const Organizer = () => {
     const areaLogs = JSON.parse(window.localStorage.getItem('areaLogs'))
@@ -22,11 +23,7 @@ const Organizer = () => {
                             <button className="button" onClick={() => toggleLog(el.id)}>{el.bossName} Strategy</button>
                             <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                 <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                <p> Boss Name: {el.bossName}</p>
-                                <p> Boss Type: {el.bossType}</p>
-                                <p> Attack Patterns: {el.bossAttackPatterns}</p>
-                                <p> Counter Attacks: {el.bossCounterAttacks}</p>
-                                <p> Boss Info: {el.bossInfo}</p>
+                                <BossForm preLoadedData={el}/>
                             </div>
                         </div>
                     )
