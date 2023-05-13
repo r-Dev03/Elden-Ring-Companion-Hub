@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 const BossForm = ({ preLoadedData }) => {
-    const [bossName, setBossName] = useState('')
-    const [bossType, setBossType] = useState('')
-    const [bossInfo, setBossInfo] = useState('')
-    const [bossAttackPatterns, setBossAttackPatterns] = useState('')
-    const [bossCounterAttacks, setBossCounterAttacks] = useState('')
+    const [bossName, setBossName] = useState(preLoadedData.bossName)
+    const [bossType, setBossType] = useState(preLoadedData.bossType)
+    const [bossInfo, setBossInfo] = useState(preLoadedData.bossInfo)
+    const [bossAttackPatterns, setBossAttackPatterns] = useState(preLoadedData.bossAttackPatterns)
+    const [bossCounterAttacks, setBossCounterAttacks] = useState(preLoadedData.bossCounterAttacks)
 
 
 
