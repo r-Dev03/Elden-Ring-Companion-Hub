@@ -35,7 +35,7 @@ function App() {
                     <Route path='/Areas' element={
                         <>
                             <Navbar />
-                            <AreaForm />
+                            <AreaForm preLoadedData={''} />
                             <Link to={`/Logs`} >
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>
@@ -44,7 +44,7 @@ function App() {
                     <Route path='/Crafting' element={
                         <>
                             <Navbar />
-                            <CraftingForm />
+                            <CraftingForm preLoadedData={''}/>
                             <Link to={`/Logs`} >
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>

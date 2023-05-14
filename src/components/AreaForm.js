@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-const AreaForm = () => {
+const AreaForm = ({ preLoadedData }) => {
 
-    const [areaName, setAreaName] = useState('')
-    const [areaQuirks, setAreaQuirks] = useState('')
-    const [commonEnemies, setCommonEnemies] = useState('')
-    const [areaInfo, setAreaInfo] = useState('')
+    const [areaName, setAreaName] = useState(preLoadedData.areaName)
+    const [areaQuirks, setAreaQuirks] = useState(preLoadedData.areaQuirks)
+    const [commonEnemies, setCommonEnemies] = useState(preLoadedData.commonEnemies)
+    const [areaInfo, setAreaInfo] = useState(preLoadedData.areaInfo)
 
     const handleSubmit = (e) => {
         e.preventDefault()

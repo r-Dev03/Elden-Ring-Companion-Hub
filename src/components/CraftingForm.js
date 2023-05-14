@@ -1,12 +1,12 @@
 
 import { useState } from "react";
 
-const CraftingForm = () => {
+const CraftingForm = ({ preLoadedData }) => {
 
-    const [itemName, setItemName] = useState('')
-    const [craftingRecipe, setCraftingRecipe] = useState('')
-    const [materialLocations, setMateralLocations] = useState('')
-    const [itemInfo, setItemInfo] = useState('')
+    const [itemName, setItemName] = useState(preLoadedData.itemName)
+    const [craftingRecipe, setCraftingRecipe] = useState(preLoadedData.craftingRecipe)
+    const [materialLocations, setMateralLocations] = useState(preLoadedData.materialLocations)
+    const [itemInfo, setItemInfo] = useState(preLoadedData.itemInfo)
 
     const handleSubmit = (e) => {
         e.preventDefault()

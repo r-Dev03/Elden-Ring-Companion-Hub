@@ -50,7 +50,7 @@ table {
 }
 
 *, html {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'EB Garamond', serif;
 }
 
 
@@ -209,14 +209,13 @@ textarea {
 
 .bossLogsContainer {
     margin: 20px;
-    padding-bottom: 60px;
     width: 33%;
-    height: 200px;
+    height: 100px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
+
 
 
 .areaLogsContainer {
@@ -229,6 +228,7 @@ textarea {
 }
 
 
+
 .craftingLogsContainer {
     margin: 20px;
     width: 33%;
@@ -237,6 +237,7 @@ textarea {
     justify-content: center;
     align-items: center;
 }
+
 
 
 .openLog {
