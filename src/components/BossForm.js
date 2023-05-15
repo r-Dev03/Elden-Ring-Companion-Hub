@@ -26,7 +26,7 @@ const BossForm = ({ preLoadedData }) => {
         setBossCounterAttacks('')
     }
 
-    function bossLog() {
+    function bossLog(el) {
 
         if (localStorage.getItem('bossLogs')) {
 
@@ -34,6 +34,10 @@ const BossForm = ({ preLoadedData }) => {
             console.log('Creating storage for boss strategies...')
             const bossLogs = []
             localStorage.setItem('bossLogs', JSON.stringify(bossLogs))
+        }
+
+        if(el) {
+
         }
         const id = String(Math.ceil(Math.random() * 999999))
 

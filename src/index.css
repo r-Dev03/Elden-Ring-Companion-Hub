@@ -244,12 +244,22 @@ textarea {
       display: flex;
       flex-direction: column;
       width: 50%;
-      height: 100vh;
+      height: 90vh;
       z-index: 1;
       position: fixed;
-      color: black;
-      background-color: gold;
+      color: white;
       left: 50%;
+      margin-top: 10px;
+      border-top: 25px solid;
+      border-right: 22px solid;
+      border-bottom: 27px solid;
+      border-left: 17px solid;
+      padding-top: 2px;
+      padding-right: 5px;
+      padding-left: 10px;
+      border-image-source: url(../src/components/border.webp);
+      border-image-slice: 25 22 27 17 fill;
+      border-image-repeat: round;
       top: 50%;
       transform: translate(-50%, -50%);
 } 
@@ -260,4 +270,17 @@ textarea {
 
 .close-btn{
     align-self: flex-end;
+    color: red;
+}
+
+.btn {
+    background-color : #3f0d12;
+    background-image : linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+    color: white;
+}
+
+.btn:hover {
+    transition: ease-in 0.2s;
+    font-size: -10%;
+    cursor: pointer;
 }
