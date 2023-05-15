@@ -18,6 +18,11 @@ const CraftingForm = ({ preLoadedData }) => {
 
         craftingLog({ itemName, craftingRecipe, itemInfo })
 
+
+        if (preLoadedData != '') {
+            return
+        }
+
         setItemName('')
         setCraftingRecipe('')
         setMateralLocations('')
@@ -45,8 +50,16 @@ const CraftingForm = ({ preLoadedData }) => {
         }
 
         const log = JSON.parse(window.localStorage.getItem('craftingLogs'))
-        log.push(item)
-        window.localStorage.setItem('craftingLogs', JSON.stringify(log))
+
+        if (preLoadedData != '') {
+            const current = log.find(el => el.id == preLoadedData.id)
+            const index = log.findIndex(el => el.id == preLoadedData.id)
+            log[index] = item
+            window.localStorage.setItem('craftingLogs', JSON.stringify(log))
+        } else {
+            log.push(item)
+            window.localStorage.setItem('craftingLogs', JSON.stringify(log))
+        }
     }
 
 

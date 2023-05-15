@@ -17,6 +17,10 @@ const AreaForm = ({ preLoadedData }) => {
 
         areaLog({ areaName, areaQuirks, areaInfo })
 
+        if (preLoadedData != '') {
+            return
+        }
+
         setAreaName('')
         setAreaQuirks('')
         setCommonEnemies('')
@@ -35,7 +39,7 @@ const AreaForm = ({ preLoadedData }) => {
         const id = String(Math.ceil(Math.random() * 999999))
 
         let area = {
-            'id' : id,
+            'id': id,
             'areaName': areaName,
             'areaQuirks': areaQuirks,
             'commonEnemies': commonEnemies,
@@ -43,8 +47,18 @@ const AreaForm = ({ preLoadedData }) => {
         }
 
         const log = JSON.parse(window.localStorage.getItem('areaLogs'))
-        log.push(area)
-        window.localStorage.setItem('areaLogs', JSON.stringify(log))
+
+        if (preLoadedData != '') {
+
+            const current = log.find(el => el.id == preLoadedData.id)
+            const index = log.findIndex(el => el.id == preLoadedData.id)
+            log[index] = area
+            window.localStorage.setItem('areaLogs', JSON.stringify(log))
+        } else {
+            
+            log.push(area)
+            window.localStorage.setItem('areaLogs', JSON.stringify(log))
+        }
     }
 
     return (
