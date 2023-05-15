@@ -36,9 +36,10 @@ const BossForm = ({ preLoadedData }) => {
             localStorage.setItem('bossLogs', JSON.stringify(bossLogs))
         }
 
-        if(el) {
+        //Adding conditional statement in the event that data is being edited
 
-        }
+
+
         const id = String(Math.ceil(Math.random() * 999999))
 
         let boss = {
@@ -50,8 +51,15 @@ const BossForm = ({ preLoadedData }) => {
             bossInfo: bossInfo,
         }
         const log = JSON.parse(window.localStorage.getItem('bossLogs'))
-        log.push(boss)
-        window.localStorage.setItem('bossLogs', JSON.stringify(log))
+        if (preLoadedData != '') {
+            const current = log.find(el => el.id == preLoadedData.id)
+            const index = log.findIndex(el => el.id == preLoadedData.id)
+            log[index] = boss
+            window.localStorage.setItem('bossLogs', JSON.stringify(log))
+        } else {
+            log.push(boss)
+            window.localStorage.setItem('bossLogs', JSON.stringify(log))
+        }
     }
 
     return (
