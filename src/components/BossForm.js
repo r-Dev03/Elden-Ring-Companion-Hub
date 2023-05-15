@@ -19,6 +19,10 @@ const BossForm = ({ preLoadedData }) => {
 
         bossLog({ bossName, bossType, bossInfo, bossAttackPatterns, bossCounterAttacks })
 
+        if(preLoadedData != '') {
+            return
+        }
+
         setBossName('')
         setBossType('')
         setBossInfo('')
@@ -37,11 +41,8 @@ const BossForm = ({ preLoadedData }) => {
         }
 
         //Adding conditional statement in the event that data is being edited
-
-
-
         const id = String(Math.ceil(Math.random() * 999999))
-
+        
         let boss = {
             id: id,
             bossName: bossName,
