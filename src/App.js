@@ -26,7 +26,7 @@ function App() {
                     <Route path='/Bosses' element={
                         <>
                             <Navbar />
-                            <BossForm preLoadedData={''}/>
+                            <BossForm preLoadedData={''} />
                             <Link to={`/Logs`} >
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>
@@ -44,7 +44,7 @@ function App() {
                     <Route path='/Crafting' element={
                         <>
                             <Navbar />
-                            <CraftingForm preLoadedData={''}/>
+                            <CraftingForm preLoadedData={''} />
                             <Link to={`/Logs`} >
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>

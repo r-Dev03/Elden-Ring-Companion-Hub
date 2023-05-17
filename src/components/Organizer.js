@@ -17,44 +17,31 @@ const Organizer = () => {
     //here is the return for the Organizer
     return (
         <>
-            <div className="logsContainer">
-                {bossLogs ? bossLogs.map(el => {
-                    //here's the return for the loop
-                    return (
-                        <div className="bossLogsContainer">
-                            <button className="button" onClick={() => toggleLog(el.id)}>{el.bossName} Strategy</button>
-                            <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
-                                <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                <BossForm preLoadedData={el} />
-                            </div>
-                        </div>
-                    )
-                }) : <p>No Boss Strategies? Git Gud</p>}
+            <table className="table">
+                <tbody>
+                    {bossLogs ? bossLogs.map(el => {
+                        //here's the return for the loop
+                        return (
+                            <label className="tableLabel">{el.bossName}</label>
 
-                {areaLogs ? areaLogs.map(el => {
-                    return (
-                        <div className="areaLogsContainer">
-                            <button className="button" onClick={() => toggleLog(el.id)}>{el.areaName} Strategy</button>
-                            <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
-                                <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                <AreaForm preLoadedData={el}/>
-                            </div>
-                        </div>
-                    )
-                }) : <p>No Area Notes? Git Gud</p>}
-
-                {craftingLogs ? craftingLogs.map(el => {
-                    return (
-                        <div className="craftingLogsContainer">
-                            <button className="button" onClick={() => toggleLog(el.id)}>{el.itemName} Strategy</button>
-                            <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
-                                <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                <CraftingForm preLoadedData={el}/>
-                            </div>
-                        </div>
-                    )
-                }) : <p>No Crafting Recipes? Git Gud</p>}
-            </div>
+                        )
+                    }) : <p>No Boss Strategies? Git Gud</p>}
+                </tbody>
+                <tbody>
+                    {areaLogs ? areaLogs.map(el => {
+                        return (
+                            <label className="tableLabel">{el.areaName}</label>
+                        )
+                    }) : <p>No Area Notes? Git Gud</p>}
+                </tbody>
+                <tbody>
+                    {craftingLogs ? craftingLogs.map(el => {
+                        return (
+                            <label className="tableLabel">{el.itemName}</label>
+                        )
+                    }) : <p>No Crafting Recipes? Git Gud</p>}
+                </tbody>
+            </table>
         </>
     )
 }
