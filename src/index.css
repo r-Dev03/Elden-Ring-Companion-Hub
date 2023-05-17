@@ -273,6 +273,11 @@ textarea {
     color: red;
 }
 
+.delete-btn {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
 .btn:hover {
     border: solid 1px black;
     background-color: orange;
@@ -319,7 +324,3 @@ textarea {
 
 }
 
-
-caption {
-    font-size: 1.5rem;
-}
