@@ -325,3 +325,23 @@ textarea {
 
 }
 
+.footer {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    bottom: 0;
+    height: 70px;
+
+}
+
+.footer-text {
+    margin: 0;
+    padding: 0;
+
+}
+
+.footer-link {
+
+}

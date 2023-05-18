@@ -22,6 +22,11 @@ function App() {
                             <Link to={`/Logs`} >
                                 <button className='organizerBtn'>Organizer</button>
                             </Link>
+                            <footer className='footer'>
+                                <p className='footer-text'>Created by</p>
+                                <Link to={`https://github.com/r-Dev03`}>Ribbal Hussain</Link>
+                                <a href="https://www.buymeacoffee.com/RibbalHussain"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=RibbalHussain&button_colour=000000&font_colour=ffffff&font_family=Bree&outline_colour=ffffff&coffee_colour=FFDD00" /></a>
+                            </footer>
                         </>} />
                     <Route path='/Bosses' element={
                         <>
