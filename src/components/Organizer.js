@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegTimesCircle, FaTrash } from "react-icons/fa";
+import { FaRegTimesCircle, FaTrash, FaPencilAlt } from "react-icons/fa";
 import BossForm from "./BossForm";
 import AreaForm from "./AreaForm";
 import CraftingForm from "./CraftingForm";
@@ -25,8 +25,11 @@ const Organizer = () => {
                             <>
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.bossName}</label>
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
-                                    <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                    <button className="delete-btn"><FaTrash /></button>
+                                    <div className="buttons">
+                                        <button className="delete-btn"><FaTrash /></button>
+                                        <button className="edit-btn">< FaPencilAlt /></button>
+                                        <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
+                                    </div>
                                     <BossForm preLoadedData={el} />
                                 </div>
                             </>
@@ -39,8 +42,11 @@ const Organizer = () => {
                             <>
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.areaName}</label>
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
-                                    <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                    <button className="delete-btn"><FaTrash /></button>
+                                    <div className="buttons">
+                                        <button className="delete-btn"><FaTrash /></button>
+                                        <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
+                                        <button className="edit-btn">< FaPencilAlt /></button>
+                                    </div>
                                     <AreaForm preLoadedData={el} />
                                 </div>
                             </>
@@ -53,8 +59,12 @@ const Organizer = () => {
                             <>
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.itemName}</label>
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
-                                    <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                    <button className="delete-btn"><FaTrash /></button>
+                                    <div className="buttons">
+                                        <button className="delete-btn"><FaTrash /></button>
+                                        <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
+                                        <button className="edit-btn">< FaPencilAlt /></button>
+                                    </div>
+
                                     <CraftingForm preLoadedData={el} />
                                 </div>
                             </>
