@@ -252,6 +252,15 @@ textarea {
    display: none; 
 }
 
+.logInfo {
+    display: flex;
+    margin-top: 100px;
+    text-align: left;
+    gap: 1rem;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+
 .buttons {
     width: 100%;
     text-align: right;
@@ -264,6 +273,15 @@ textarea {
 
 .delete-btn {
     margin-right: 10px;
+}
+
+.edit-btn {
+    background-image: url(../src/components/Golden_Needle.png);
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-size: 30px auto;
 }
 
 .btn:hover {

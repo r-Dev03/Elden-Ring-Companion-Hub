@@ -9,9 +9,15 @@ const Organizer = () => {
     const bossLogs = JSON.parse(window.localStorage.getItem('bossLogs'))
     const craftingLogs = JSON.parse(window.localStorage.getItem('craftingLogs'))
     const [selectedLog, setSelectedLog] = useState('')
+    const [editMode, setEditMode] = useState(false)
 
     function toggleLog(id) {
         selectedLog == id ? setSelectedLog('') : setSelectedLog(id)
+    }
+
+    function toggleEditMode() {
+        setEditMode(!editMode)
+        console.log(editMode)
     }
 
     //here is the return for the Organizer
@@ -27,14 +33,23 @@ const Organizer = () => {
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                     <div className="buttons">
                                         <button className="delete-btn"><FaTrash /></button>
-                                        <button className="edit-btn">< FaPencilAlt /></button>
+                                        <button className="edit-btn" onClick={() => toggleEditMode()}></button>
                                         <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
                                     </div>
-                                    <BossForm preLoadedData={el} />
+                                    {editMode == false ?
+                                        <div className="logInfo">
+                                            <span> Boss: {el.bossName}</span>
+                                            <span> Type: {el.bossType}</span>
+                                            <span> Attack Patterns: {el.bossAttackPatterns}</span>
+                                            <span> Counter Attacks: {el.bossCounterAttacks}</span>
+                                            <span> Boss Info: {el.bossInfo}</span>
+                                        </div>
+                                        :
+                                        <BossForm preLoadedData={el} />}
                                 </div>
                             </>
                         )
-                    }) : <p>No Boss Strategies? Git Gud</p>}
+                    }) : <label className="tableLabel">No Boss Strategies? Git Gud</label>}
                 </tbody>
                 <tbody>
                     {areaLogs ? areaLogs.map(el => {
@@ -44,14 +59,22 @@ const Organizer = () => {
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                     <div className="buttons">
                                         <button className="delete-btn"><FaTrash /></button>
+                                        <button className="edit-btn" onClick={() => toggleEditMode()}></button>
                                         <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                        <button className="edit-btn">< FaPencilAlt /></button>
                                     </div>
-                                    <AreaForm preLoadedData={el} />
+                                    {editMode == false ?
+                                        <div className="logInfo">
+                                            <span> Area: {el.areaName}</span>
+                                            <span> Area Quirks: {el.areaQuirks}</span>
+                                            <span> Common Enemies: {el.commonEnemies}</span>
+                                            <span> Area Info: {el.areaInfo}</span>
+                                        </div>
+                                        :
+                                        <AreaForm preLoadedData={el} />}
                                 </div>
                             </>
                         )
-                    }) : <p>No Area Notes? Git Gud</p>}
+                    }) : <label className="tableLabel">No Area Notes? Git Gud</label>}
                 </tbody>
                 <tbody>
                     {craftingLogs ? craftingLogs.map(el => {
@@ -61,15 +84,22 @@ const Organizer = () => {
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                     <div className="buttons">
                                         <button className="delete-btn"><FaTrash /></button>
+                                        <button className="edit-btn" onClick={() => toggleEditMode()}></button>
                                         <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
-                                        <button className="edit-btn">< FaPencilAlt /></button>
                                     </div>
-
-                                    <CraftingForm preLoadedData={el} />
+                                    {editMode == false ?
+                                        <div className="logInfo">
+                                            <span> Item Name: {el.itemName}</span>
+                                            <span> Crafting Recipe: {el.craftingRecipe}</span>
+                                            <span> Material Locations: {el.materialLocations}</span>
+                                            <span> Item Info: {el.itemInfo}</span>
+                                        </div>
+                                        :
+                                        <CraftingForm preLoadedData={el} />}
                                 </div>
                             </>
                         )
-                    }) : <p>No Crafting Recipes? Git Gud</p>}
+                    }) : <label className="tableLabel">No Crafting Recipes? Git Gud</label>}
                 </tbody>
             </table>
         </>
