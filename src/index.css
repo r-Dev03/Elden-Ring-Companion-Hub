@@ -278,12 +278,13 @@ textarea {
 }
 
 .delete-btn {
-    background-image: url(../src/components/Black_Needle.png);
+    background-image: url(../src/components/burn_paper.png);
+    background-repeat: no-repeat;
     width: 30px;
     height: 30px;
     background-size: 100%;
     background-position: center;
-    background-size: 30px auto;
+    background-size: 60px auto;
 }
 
 
@@ -347,8 +348,8 @@ textarea {
     width: 100%;
     height: 10vh;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center;
     position: absolute;
     bottom: 0;
 }
@@ -356,22 +357,19 @@ textarea {
 .footer-text {
     margin: 0;
     padding: 0;
-    width: 33%;
+    white-space: nowrap;
+    width: 12%;
     height: 20px;
 
 }
 
 .footer-link {
-    margin: 0;
-    padding: 0;
-    width: 33%;
-    height: 20px;
-
+    color: #f4d35e;
 }
 
 .coffee-btn {
     height: 50px;
-    width: 33%;
+    width: 10%;
     margin: 0;
     padding: 0;
 }
