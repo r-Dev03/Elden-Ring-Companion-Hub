@@ -269,11 +269,23 @@ textarea {
 .close-btn{
     color: red;
     margin-left: 10px;
+    background-image: url(../src/components/red-x-icon.jpg);
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-size: 30px auto;
 }
 
 .delete-btn {
-    margin-right: 10px;
+    background-image: url(../src/components/Black_Needle.png);
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-size: 30px auto;
 }
+
 
 .edit-btn {
     background-image: url(../src/components/Golden_Needle.png);
@@ -282,6 +294,7 @@ textarea {
     background-size: 100%;
     background-position: center;
     background-size: 30px auto;
+    margin-left: 10px;
 }
 
 .btn:hover {
@@ -331,22 +344,34 @@ textarea {
 }
 
 .footer {
-    display: flex;
-    position: absolute;
     width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
+    position: absolute;
     bottom: 0;
-    height: 70px;
-
 }
 
 .footer-text {
     margin: 0;
     padding: 0;
+    width: 33%;
+    height: 20px;
 
 }
 
 .footer-link {
+    margin: 0;
+    padding: 0;
+    width: 33%;
+    height: 20px;
 
+}
+
+.coffee-btn {
+    height: 50px;
+    width: 33%;
+    margin: 0;
+    padding: 0;
 }

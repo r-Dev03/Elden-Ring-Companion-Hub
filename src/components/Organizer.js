@@ -32,9 +32,9 @@ const Organizer = () => {
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.bossName}</label>
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                     <div className="buttons">
-                                        <button className="delete-btn"><FaTrash /></button>
+                                        <button className="delete-btn"></button>
                                         <button className="edit-btn" onClick={() => toggleEditMode()}></button>
-                                        <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
+                                        <button className="close-btn" onClick={() => toggleLog(el.id)}></button>
                                     </div>
                                     {editMode == false ?
                                         <div className="logInfo">
@@ -58,9 +58,9 @@ const Organizer = () => {
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.areaName}</label>
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                     <div className="buttons">
-                                        <button className="delete-btn"><FaTrash /></button>
+                                        <button className="delete-btn"></button>
                                         <button className="edit-btn" onClick={() => toggleEditMode()}></button>
-                                        <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
+                                        <button className="close-btn" onClick={() => toggleLog(el.id)}></button>
                                     </div>
                                     {editMode == false ?
                                         <div className="logInfo">
@@ -83,9 +83,9 @@ const Organizer = () => {
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.itemName}</label>
                                 <div className={selectedLog == el.id ? "openLog" : "hideLog"} key={el.id}>
                                     <div className="buttons">
-                                        <button className="delete-btn"><FaTrash /></button>
+                                        <button className="delete-btn"></button>
                                         <button className="edit-btn" onClick={() => toggleEditMode()}></button>
-                                        <button className="close-btn" onClick={() => toggleLog(el.id)}> <FaRegTimesCircle /></button>
+                                        <button className="close-btn" onClick={() => toggleLog(el.id)}></button>
                                     </div>
                                     {editMode == false ?
                                         <div className="logInfo">
