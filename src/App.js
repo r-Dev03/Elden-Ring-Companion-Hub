@@ -20,7 +20,7 @@ function App() {
                         <>
                             <Navbar />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                             <footer className='footer'>
                                 <p className='footer-text'>Created by
@@ -34,7 +34,7 @@ function App() {
                             <Navbar />
                             <BossForm preLoadedData={''} />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                             <footer className='footer'>
                                 <p className='footer-text'>Created by

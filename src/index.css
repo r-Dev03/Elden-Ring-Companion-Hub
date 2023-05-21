@@ -63,6 +63,8 @@ table {
     color: white;
     background-image: url(../src/components/blur.jpg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .navbar_container{
@@ -131,9 +133,16 @@ a:link, a:visited, a:hover, a:active {
 .organizerBtn {
     bottom: 44px;
     cursor: pointer;
-    position: fixed;
+    position: absolute;
+    background-image: url(../src/components/map.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-color: inherit;
     right: 20px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
+    border: none;
     z-index: 3;
     border-radius: 50%;
 }
