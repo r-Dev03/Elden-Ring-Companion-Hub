@@ -382,3 +382,27 @@ textarea {
     margin: 0;
     padding: 0;
 }
+
+/* Responsive Design */
+
+@media (max-width: 1060px) {
+
+    .table {
+    }
+
+    .openLog {
+        width: 70%;
+    }
+}
+
+@media (max-width: 750px) {
+    .openLog {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+    .openLog {
+        width: 90%;
+    }
+}
