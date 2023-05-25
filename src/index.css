@@ -3,6 +3,7 @@
    License: none (public domain)
 */
 
+/* Reset and base styles */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -17,42 +18,46 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 
 }
 
 *, html {
     font-family: 'EB Garamond', serif;
 }
-
 
 
 
@@ -63,9 +68,12 @@ table {
     color: white;
     background-image: url(../src/components/blur.jpg);
     background-repeat: no-repeat;
-    background-position: center;
     background-size: cover;
+    background-position: center;
 }
+
+
+/* Navbar  and organizer button */
 
 .navbar_container{
     height: 100%;
@@ -94,10 +102,10 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .button {
-  display: block;
-  width: 100%;
-  height: 4vh;
-  background: linear-gradient(
+    display: block;
+    width: 100%;
+    height: 4vh;
+    background: linear-gradient(
     90deg,
     rgba(10, 10, 10, 1) 0%,
     rgba(10, 10, 10, 1) 1%,
@@ -105,16 +113,16 @@ a:link, a:visited, a:hover, a:active {
     rgba(25, 21, 18, 1) 90%,
     rgba(10, 10, 10, 1) 99%,
     rgba(10, 10, 10, 1) 100%
-  );
-  color: var(--primary-text-color);
-  border: none;
-  outline: none;
-  margin-bottom: 0.6rem;
-  cursor: pointer;
+    );
+    color: var(--primary-text-color);
+    border: none;
+    outline: none;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
 }
 
 .button:hover {
-  background: linear-gradient(
+    background: linear-gradient(
     90deg,
     rgba(10, 10, 10, 1) 0%,
     rgba(10, 10, 10, 1) 1%,
@@ -122,7 +130,7 @@ a:link, a:visited, a:hover, a:active {
     rgba(51, 49, 37, 1) 90%,
     rgba(10, 10, 10, 1) 99%,
     rgba(10, 10, 10, 1) 100%
-  );
+    );
 }
 
 .logsContainer .button {
@@ -146,6 +154,7 @@ a:link, a:visited, a:hover, a:active {
     z-index: 3;
     border-radius: 50%;
 }
+
 
 .navsprite {
     background-image: url(../src/components/navsprite.png);
@@ -173,7 +182,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .navsprite.weapons {
-     background-position: -111px 0;
+    background-position: -111px 0;
     margin-left: 10px;
 }
 
@@ -181,25 +190,27 @@ a:link, a:visited, a:hover, a:active {
     background-position: -222px 0;
     margin-left: 10px;
 }
+/* Forms */
+
 .form {
     width: 400px;
     margin: 0 auto;
 }
 
 .form-control {
-  margin: 20px 0;
+    margin: 20px 0;
 }
 
 .form-control label {
-  display: block;
+    display: block;
 }
 
 .form-control input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
+    width: 100%;
+    height: 40px;
+    margin: 5px;
+    padding: 3px 7px;
+    font-size: 17px;
 }
 textarea {
     margin-bottom: 20px;
@@ -208,7 +219,7 @@ textarea {
     width: 418px;
 }
 
-
+/* Log containers */
 
 .areaLogsContainer {
     margin: 20px;
@@ -230,35 +241,36 @@ textarea {
     align-items: center;
 }
 
-
+/* Modal Pop up */
 
 .openLog {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      height: 90vh;
-      z-index: 1;
-      position: fixed;
-      color: white;
-      left: 50%;
-      margin-top: 10px;
-      border-top: 25px solid;
-      border-right: 22px solid;
-      border-bottom: 27px solid;
-      border-left: 17px solid;
-      padding-top: 2px;
-      padding-right: 5px;
-      padding-left: 10px;
-      border-image-source: url(../src/components/border.webp);
-      border-image-slice: 25 22 27 17 fill;
-      border-image-repeat: round;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 90vh;
+    z-index: 1;
+    position: fixed;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    border-top: 25px solid;
+    border-right: 22px solid;
+    border-bottom: 27px solid;
+    border-left: 17px solid;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-left: 10px;
+    border-image-source: url(../src/components/border.webp);
+    border-image-slice: 25 22 27 17 fill;
+    border-image-repeat: round;
 } 
 
 
 .hideLog {
-   display: none; 
+    display: none; 
 }
 
 .logInfo {
@@ -268,7 +280,11 @@ textarea {
     gap: 1rem;
     flex-direction: column;
     font-size: 1.4rem;
+    word-spacing: 0.3rem;
 }
+
+
+/* Open Log buttons */
 
 .buttons {
     width: 100%;
@@ -310,7 +326,7 @@ textarea {
 .btn:hover {
     border: solid 1px black;
     background-color: orange;
-    
+
 }
 
 .btn:hover {
@@ -318,6 +334,8 @@ textarea {
     font-size: -10%;
     cursor: pointer;
 }
+
+/* Table and log data */
 
 .table {
     display: flex;
@@ -332,6 +350,7 @@ textarea {
     border-image-slice: 100%;
     border-image-slice: 5;
 }
+
 .tableLabel {
     display: inline-block;
     width: 95%;
@@ -352,22 +371,23 @@ textarea {
     background-color: #56230B;
 
 }
+/* Footer */
 
 .footer {
-    width: 100%;
-    height: 10vh;
-    display: flex;
     align-items: center;
+    bottom: 0;
+    display: flex;
+    gap: 50px;
+    height: 70px;
     justify-content: center;
     position: absolute;
-    bottom: 0;
+    width: 100%; 
 }
 
 .footer-text {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     white-space: nowrap;
-    width: 12%;
     height: 20px;
 
 }
@@ -378,31 +398,42 @@ textarea {
 
 .coffee-btn {
     height: 50px;
-    width: 10%;
-    margin: 0;
+    width: 20%;
+    margin: 0 20px 0 0 ;
     padding: 0;
 }
 
 /* Responsive Design */
 
-@media (max-width: 1060px) {
+@media (max-width: 1200px) {
 
     .table {
+        gap: 50px;
     }
 
     .openLog {
-        width: 70%;
+        width: 75vw;
+        height: 80vh;
     }
 }
+
+@media (max-width: 850px) {
+    .openLog {
+        width: 80vw;
+        height: 75vh;
+    }
+}
+
 
 @media (max-width: 750px) {
     .openLog {
-        width: 80%;
+        width: 85vw;
+        height: 70vh;
     }
 }
 
-@media (max-width: 400px) {
-    .openLog {
-        width: 90%;
+@media (max-width: 950px) {
+    .logInfo {
+        font-size: 1.1rem;
     }
 }
