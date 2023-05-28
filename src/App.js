@@ -10,6 +10,11 @@ import Organizer from './components/Organizer';
 import { Link } from 'react-router-dom'
 import CheatSheet from './components/CheatSheet';
 
+function toggleEditMode() {
+    setEditMode(!editMode)
+    console.log(editMode)
+}
+
 function App() {
 
     return (
@@ -20,15 +25,15 @@ function App() {
                         <>
                             <Navbar />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                         </>} />
                     <Route path='/Bosses' element={
                         <>
                             <Navbar />
-                            <BossForm preLoadedData={''}/>
+                            <BossForm preLoadedData={''} />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                         </>
                     } />
@@ -37,16 +42,16 @@ function App() {
                             <Navbar />
                             <AreaForm preLoadedData={''} />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                         </>
                     } />
                     <Route path='/Crafting' element={
                         <>
                             <Navbar />
-                            <CraftingForm preLoadedData={''}/>
+                            <CraftingForm preLoadedData={''} />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                         </>
                     } />
@@ -54,7 +59,7 @@ function App() {
                         <>
                             <Navbar />
                             <Link to={`/Logs`} >
-                                <button className='organizerBtn'>Organizer</button>
+                                <button className='organizerBtn'></button>
                             </Link>
                             <CheatSheet />
                         </>
