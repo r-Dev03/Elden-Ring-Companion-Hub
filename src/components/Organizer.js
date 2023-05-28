@@ -15,16 +15,19 @@ const Organizer = () => {
     function toggleLog(id) {
         selectedLog == id ? setSelectedLog('') : setSelectedLog(id)
     }
+
     //Toggling between specific form and actual view of data.
     function toggleEditMode() {
         setEditMode(!editMode)
         console.log(editMode)
     }
+
     //Deleting log function through filtering.
     function deleteLog(id, logType) {
        const logs = JSON.parse(window.localStorage.getItem(logType))
        const filteredLogs = logs.filter(el => el.id != id) 
        window.localStorage.setItem(logType, JSON.stringify(filteredLogs))
+       setSelectedLog('')
 
     }
 
@@ -34,7 +37,6 @@ const Organizer = () => {
             <table className="table">
                 <tbody>
                     {bossLogs ? bossLogs.map(el => {
-                        //here's the return for the loop
                         return (
                             <>
                                 <label className="tableLabel" onClick={() => toggleLog(el.id)}>{el.bossName}</label>

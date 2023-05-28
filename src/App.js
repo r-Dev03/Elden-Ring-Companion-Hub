@@ -10,6 +10,11 @@ import Organizer from './components/Organizer';
 import { Link } from 'react-router-dom'
 import CheatSheet from './components/CheatSheet';
 
+function toggleEditMode() {
+    setEditMode(!editMode)
+    console.log(editMode)
+}
+
 function App() {
 
     return (
