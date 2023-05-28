@@ -425,15 +425,34 @@ textarea {
 }
 
 
+
+@media (max-width: 950px) {
+    .logInfo {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 750px) {
     .openLog {
         width: 85vw;
         height: 70vh;
     }
+    
+    .table {
+        border-image-slice: 0;
+    }
+
+    .nav_text {
+        display: none;
+    }
 }
 
-@media (max-width: 950px) {
-    .logInfo {
-        font-size: 1.1rem;
+@media (max-width: 500px) {
+     .form-control, .form{
+        width: 300px;
+    }
+
+    textarea {
+        width: 318px;
     }
 }
