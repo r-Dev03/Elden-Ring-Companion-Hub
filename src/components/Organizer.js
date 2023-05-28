@@ -47,7 +47,7 @@ const Organizer = () => {
                                         <button className="close-btn" onClick={() => toggleLog(el.id)}></button>
                                     </div>
                                     {editMode == false ?
-                                        <div className="logInfo">
+                                        <div className="logInfo" key={el.id}>
                                             <span> Boss: {el.bossName}</span>
                                             <span> Type: {el.bossType}</span>
                                             <span> Attack Patterns: {el.bossAttackPatterns}</span>
@@ -73,7 +73,7 @@ const Organizer = () => {
                                         <button className="close-btn" onClick={() => toggleLog(el.id)}></button>
                                     </div>
                                     {editMode == false ?
-                                        <div className="logInfo">
+                                        <div className="logInfo" key={el.id}>
                                             <span> Area: {el.areaName}</span>
                                             <span> Area Quirks: {el.areaQuirks}</span>
                                             <span> Common Enemies: {el.commonEnemies}</span>
@@ -98,7 +98,7 @@ const Organizer = () => {
                                         <button className="close-btn" onClick={() => toggleLog(el.id)}></button>
                                     </div>
                                     {editMode == false ?
-                                        <div className="logInfo">
+                                        <div className="logInfo" key={el.id}>
                                             <span> Item Name: {el.itemName}</span>
                                             <span> Crafting Recipe: {el.craftingRecipe}</span>
                                             <span> Material Locations: {el.materialLocations}</span>

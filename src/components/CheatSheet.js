@@ -3,11 +3,12 @@ import { useState } from "react";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
+    const [categoryValue, setCategoryValue] = useState('Ammos')
 
     function searchInfo() {
         console.log(inputValue)
+        console.log(categoryValue)
     }
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -17,7 +18,7 @@ const CheatSheet = () => {
             return
         }
 
-        searchInfo({ inputValue })
+        searchInfo({ inputValue, categoryValue })
 
         setInputValue('')
     }
@@ -25,9 +26,9 @@ const CheatSheet = () => {
         <form className='form' id="cheat-form" onSubmit={handleSubmit}>
             <div className='form-control'>
 
-                <label for="Type">Category</label>
+                <label htmlFor="Type">Category</label>
 
-                <select name="Category" id="Categories" required>
+                <select name="Category" id="Categories" required value = {categoryValue} onChange = {(e) => setCategoryValue(e.target.value)}> 
                     <option value="ammos">Ammos</option>
                     <option value="armors">Armors</option>
                     <option value="ashes of war">Ashes of War</option>
