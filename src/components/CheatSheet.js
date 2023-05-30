@@ -1,13 +1,22 @@
 import React from "react";
 import { useState } from "react";
+import axios, { Axios } from "axios";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
     const [categoryValue, setCategoryValue] = useState('Ammos')
+    
+    const baseUrl = `https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`
 
-    function searchInfo() {
-        console.log(inputValue)
-        console.log(categoryValue)
+    const searchInfo = async ()  => {
+        try {
+            let res = await(axios.get(baseUrl))
+            console.log(res.data.data[0])
+            return 
+        }
+        catch(err) {
+            console.log(err)
+        }
     }
 
     const handleSubmit = (e) => {
@@ -57,6 +66,7 @@ const CheatSheet = () => {
                 <input type='submit' value='Search' className='btn btn-block' />
             </div>
         </form>
+
     )
 }
 
