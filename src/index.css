@@ -371,6 +371,18 @@ textarea {
     background-color: #56230B;
 
 }
+/*CheatSheet */
+
+.data-img {
+    width: 100%;
+    height: 400px;
+}
+
+#Categories, .search {
+    margin: 10px 0 10px 0;
+}
+
+
 /* Footer */
 
 .footer {

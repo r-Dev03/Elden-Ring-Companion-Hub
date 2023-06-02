@@ -1,23 +1,24 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import axios, { Axios } from "axios";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
     const [categoryValue, setCategoryValue] = useState('Ammos')
+    const [responseData, setResponseData] = useState(null)
     
-    const baseUrl = `https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`
-
-    const searchInfo = async ()  => {
+    const fetchData = () => {
         try {
-            let res = await(axios.get(baseUrl))
-            console.log(res.data.data[0])
-            return 
+            const response = axios.get(`https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`)
+            setResponseData(response.data);
+            console.log(responseData)
+        } catch (error) {
+            console.error('Error fetching data:', error);
         }
-        catch(err) {
-            console.log(err)
-        }
-    }
+    };
+
+
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -26,12 +27,11 @@ const CheatSheet = () => {
             alert('Your gonna need it...')
             return
         }
-
-        searchInfo({ inputValue, categoryValue })
-
+        fetchData()
         setInputValue('')
     }
     return (
+        <div>
         <form className='form' id="cheat-form" onSubmit={handleSubmit}>
             <div className='form-control'>
 
@@ -54,7 +54,7 @@ const CheatSheet = () => {
                     <option value="weapons">Weapons</option>
                 </select>
 
-                <label>Search Elden Ring Info</label>
+                <label className="search">Search Elden Ring Info</label>
                 <input
                     type='text'
                     placeholder='location, boss, items...'
@@ -66,8 +66,11 @@ const CheatSheet = () => {
                 <input type='submit' value='Search' className='btn btn-block' />
             </div>
         </form>
+            <img className="data-img" src=""/>
+            <section className="data-info"></section>
+
+        </div>
 
     )
 }
-
 export default CheatSheet
