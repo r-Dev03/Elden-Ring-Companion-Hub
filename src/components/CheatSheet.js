@@ -6,7 +6,6 @@ const CheatSheet = () => {
     const [categoryValue, setCategoryValue] = useState('Ammos')
     const [responseData, setResponseData] = useState(null)
 
-    const exampleURL = "https://eldenring.fanapis.com/api/ashes?name=Ash%20Of%20War:%20Prelate's%20Charge"
     
        const fetchData =  () => {
         axios.get(`https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`)
@@ -46,6 +45,7 @@ const CheatSheet = () => {
                     <option value="ashes of war">Ashes of War</option>
                     <option value="bosses">Bosses</option>
                     <option value="classes">Classes</option>
+                    <option value="creatures">Creatures</option>
                     <option value="incantations">Incantations</option>
                     <option value="items">Items</option>
                     <option value="locations">Locations</option>
@@ -69,7 +69,7 @@ const CheatSheet = () => {
                 <input type='submit' value='Search' className='btn btn-block' />
             </div>
         </form>
-            <img className="data-img" src={responseData[0].image}/>
+            <img className="data-img" src={responseData ? responseData[0].image : ""}/>
             <section className="data-info"></section>
 
         </div>
