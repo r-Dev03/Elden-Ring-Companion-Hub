@@ -19,6 +19,28 @@ const CheatSheet = () => {
 
     }
 
+    function filterByValue(array, string) {
+        return array.filter(obj =>
+            Object.keys(obj).some(k => obj[k].toLowerCase().includes(string.toLowerCase())));
+    }
+
+    const fetchDataAlternate = () => {
+        axios.get(`https://eldenring.fanapis.com/api/${categoryValue}`)
+        .then(res => {
+                const results = res.data.data.filter((obj)=>{
+                    return Object.keys(obj).reduce((acc, curr)=>{
+                        return acc || obj[curr].toLowerCase().includes(inputValue);
+                    }, false);
+                });
+                console.log(results)
+                setResponseData(res.data.data)
+                console.log(responseData)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
 
 
 
@@ -29,8 +51,10 @@ const CheatSheet = () => {
             alert('Your gonna need it...')
             return
         }
+        console.log()
         fetchData()
         setInputValue('')
+
     }
     return (
         <div>
@@ -69,8 +93,10 @@ const CheatSheet = () => {
                 <input type='submit' value='Search' className='btn btn-block' />
             </div>
         </form>
+            <div className="data">
             <img className="data-img" src={responseData ? responseData[0].image : ""}/>
             <section className="data-info"></section>
+            </div>
 
         </div>
 
