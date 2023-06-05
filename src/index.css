@@ -373,10 +373,24 @@ textarea {
 }
 /*CheatSheet */
 
-.data-img {
-    width: 20%;
-    height: 200px;
+.data {
     margin: 0 auto;
+    width: 50%;
+    height: 400px;
+    border-right: 9px solid;
+    border-bottom: 13px solid;
+    border-left: 11px solid;
+    padding-right: 4px;
+    padding-left: 2px;
+    border-image-source: url(./components/border2.webp);
+    border-image-slice: 13 9 13 11 fill;
+    border-image-repeat: stretch;
+}
+
+.data-img {
+    width: 30%;
+    height: 200px;
+    margin: 30px 0 0 30px;
 }
 
 #Categories, .search {

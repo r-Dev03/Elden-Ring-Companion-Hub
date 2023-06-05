@@ -19,27 +19,17 @@ const CheatSheet = () => {
 
     }
 
-    function filterByValue(array, string) {
-        return array.filter(obj =>
-            Object.keys(obj).some(k => obj[k].toLowerCase().includes(string.toLowerCase())));
-    }
 
     const fetchDataAlternate = () => {
-        axios.get(`https://eldenring.fanapis.com/api/${categoryValue}`)
+        axios.get('https://eldenring.fanapis.com/api/bosses?limit=100')
         .then(res => {
-                const results = res.data.data.filter((obj)=>{
-                    return Object.keys(obj).reduce((acc, curr)=>{
-                        return acc || obj[curr].toLowerCase().includes(inputValue);
-                    }, false);
-                });
-                console.log(results)
-                setResponseData(res.data.data)
-                console.log(responseData)
+                console.log(res.data.data)
+                const filteredData = res.data.data.filter(obj => obj.name.toLowerCase().includes(inputValue.toLowerCase()))
+                console.log(filteredData)
+                
             })
-            .catch(err => {
-                console.log(err)
-            })
-    }
+        }
+
 
 
 
@@ -52,7 +42,7 @@ const CheatSheet = () => {
             return
         }
         console.log()
-        fetchData()
+        fetchDataAlternate()
         setInputValue('')
 
     }
@@ -95,7 +85,8 @@ const CheatSheet = () => {
         </form>
             <div className="data">
             <img className="data-img" src={responseData ? responseData[0].image : ""}/>
-            <section className="data-info"></section>
+            <section className="data-info">
+                </section>
             </div>
 
         </div>
