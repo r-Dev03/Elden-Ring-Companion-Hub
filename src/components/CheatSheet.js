@@ -20,29 +20,31 @@ const CheatSheet = () => {
     }
 
 
-    const fetchDataAlternate = () => {
-        axios.get('https://eldenring.fanapis.com/api/bosses?limit=100')
-        .then(res => {
-                console.log(res.data.data)
-                const filteredData = res.data.data.filter(obj => obj.name.toLowerCase().includes(inputValue.toLowerCase()))
-                console.log(filteredData)
-                
-            })
+
+    const fetchAndFilter = async (inputVal) => {
+        try {
+            const res = await axios.get(`https://eldenring.fanapis.com/api/${categoryValue}?limit=100`);
+            console.log(res.data.data);
+            const filteredData = res.data.data.filter(obj => obj.name.toLowerCase().includes(inputVal.toLowerCase()));
+            console.log(filteredData);
+            setResponseData(filteredData)
+        } catch (error) {
+            // Handle error
+            console.error(error);
         }
+    }
 
 
 
 
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         if (!inputValue) {
             alert('Your gonna need it...')
             return
         }
-        console.log()
-        fetchDataAlternate()
+        await fetchAndFilter(inputValue)
         setInputValue('')
 
     }
