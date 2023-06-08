@@ -3,7 +3,7 @@ import axios, { Axios } from "axios";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
-    const [categoryValue, setCategoryValue] = useState('Ammos')
+    const [categoryValue, setCategoryValue] = useState('ammos')
     const [responseData, setResponseData] = useState(null)
 
     
@@ -58,7 +58,7 @@ const CheatSheet = () => {
                 <select name="Category" id="Categories" required value = {categoryValue} onChange = {(e) => setCategoryValue(e.target.value)}> 
                     <option value="ammos">Ammos</option>
                     <option value="armors">Armors</option>
-                    <option value="ashes of war">Ashes of War</option>
+                    <option value="ashes">Ashes of War</option>
                     <option value="bosses">Bosses</option>
                     <option value="classes">Classes</option>
                     <option value="creatures">Creatures</option>
@@ -86,8 +86,16 @@ const CheatSheet = () => {
             </div>
         </form>
             <div className="data">
-            <img className="data-img" src={responseData ? responseData[0].image : ""}/>
+            <img className="data-img" src={responseData != null || responseData != undefined ? responseData[0].image : ""}/>
             <section className="data-info">
+                    {responseData ?  Array.from(responseData[0]).map(el => {
+                        return (
+                        <>
+                            <p> funny </p>
+                        </>
+                        )
+                    }): <p> Please try to be more specific with your search </p>}
+                        
                 </section>
             </div>
 
