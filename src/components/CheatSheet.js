@@ -94,6 +94,9 @@ const CheatSheet = () => {
             <section className="data-info">
                     {responseData ? 
                         Object.keys(responseData).map((key, i) => {
+                            if(Array.isArray(responseData[key]) == true) {
+                                responseData[key] = [...responseData[key]]
+                            }
                         return (
                         <>
                             <p key={i}> {key} : {responseData[key]}</p>
