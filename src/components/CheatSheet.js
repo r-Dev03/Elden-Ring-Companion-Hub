@@ -27,7 +27,11 @@ const CheatSheet = () => {
             console.log(res.data.data);
             const filteredData = res.data.data.filter(obj => obj.name.toLowerCase().includes(inputVal.toLowerCase()));
             console.log(filteredData);
-            setResponseData(filteredData)
+            setResponseData(filteredData[0])
+            Object.keys(responseData).map((key, i) => {
+                console.log(key)
+                console.log(responseData[key])
+            })
         } catch (error) {
             // Handle error
             console.error(error);
@@ -86,12 +90,13 @@ const CheatSheet = () => {
             </div>
         </form>
             <div className="data">
-            <img className="data-img" src={responseData != null || responseData != undefined ? responseData[0].image : ""}/>
+            <img className="data-img" src={responseData != null || responseData != undefined ? responseData.image : ""}/>
             <section className="data-info">
-                    {responseData ?  Array.from(responseData[0]).map(el => {
+                    {responseData ? 
+                        Object.keys(responseData).map((key, i) => {
                         return (
                         <>
-                            <p> funny </p>
+                            <p key={i}> {key} : {responseData[key]}</p>
                         </>
                         )
                     }): <p> Please try to be more specific with your search </p>}
