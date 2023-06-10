@@ -376,7 +376,7 @@ textarea {
 .data {
     margin: 0 auto;
     width: 50%;
-    height: 400px;
+    height: 500px;
     border-right: 9px solid;
     border-bottom: 13px solid;
     border-left: 11px solid;
@@ -386,6 +386,14 @@ textarea {
     border-image-slice: 13 9 13 11 fill;
     border-image-repeat: stretch;
 }
+
+.data-info {
+
+} 
+
+.data-info p{
+    padding: 10px 0 0 30px;
+} 
 
 .data-img {
     width: 30%;

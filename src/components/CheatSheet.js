@@ -94,6 +94,7 @@ const CheatSheet = () => {
             <section className="data-info">
                     {responseData ? 
                         Object.keys(responseData).map((key, i) => {
+                            //Converting array property values to spread so they can render properly
                             if(Array.isArray(responseData[key]) == true) {
                                 responseData[key] = [...responseData[key]]
                             }
@@ -102,7 +103,7 @@ const CheatSheet = () => {
                             <p key={i}> {key} : {responseData[key]}</p>
                         </>
                         )
-                    }): <p> Please try to be more specific with your search </p>}
+                    }): <p> Please try to be more specific with your search</p>}
                         
                 </section>
             </div>
