@@ -6,6 +6,20 @@ const CheatSheet = () => {
     const [categoryValue, setCategoryValue] = useState('ammos')
     const [responseData, setResponseData] = useState(null)
 
+    
+       const fetchData =  () => {
+        axios.get(`https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`)
+            .then(res => {
+                setResponseData(res.data.data)
+                console.log(responseData)
+            }) 
+            .catch(err => {
+                console.log(err)
+            })
+
+    }
+
+
 
     const fetchAndFilter = async (inputVal) => {
         try {
@@ -80,13 +94,13 @@ const CheatSheet = () => {
             <section className="data-info">
                     {responseData ? 
                         Object.keys(responseData).map((key, i) => {
-                            //Converting array property values to spread so they can render properly
+                            //Converting array propertie values to spread so they can render properly
                             if(Array.isArray(responseData[key]) == true) {
                                 responseData[key] = [...responseData[key]]
                             }
                         return (
                         <>
-                            <p key={i}> {key} : {responseData[key]}</p>
+                            <p key={i}> {key.toUpperCase()} : {responseData[key]}</p>
                         </>
                         )
                     }): <p> Please try to be more specific with your search</p>}
