@@ -6,20 +6,6 @@ const CheatSheet = () => {
     const [categoryValue, setCategoryValue] = useState('ammos')
     const [responseData, setResponseData] = useState(null)
 
-    
-       const fetchData =  () => {
-        axios.get(`https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`)
-            .then(res => {
-                setResponseData(res.data.data)
-                console.log(responseData)
-            }) 
-            .catch(err => {
-                console.log(err)
-            })
-
-    }
-
-
 
     const fetchAndFilter = async (inputVal) => {
         try {
