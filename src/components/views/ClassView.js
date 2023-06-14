@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const ClassesView= ({res}) => {
+const ClassView= ({res}) => {
     return (
         <>
             {res ?  
@@ -26,4 +26,4 @@ const ClassesView= ({res}) => {
         </>
     )    
 }
-export default ClassesView
+export default ClassView

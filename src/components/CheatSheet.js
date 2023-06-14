@@ -1,10 +1,14 @@
 import { useState, useEffect} from "react";
 import axios, { Axios } from "axios";
-import BossView from "./BossView";
-import AmmoView from "./AmmoView";
-import ArmorsView from "./ArmorsView";
-import AshesView from "./AshesView";
-import ClassesView from "./ClassesView";
+import BossView from "./views/BossView"
+import AmmoView from "./views/AmmoView";
+import ArmorView from "./views/ArmorView";
+import AshView from "./views/AshView";
+import ClassView from "./views/ClassView";
+import CreatureView from "./views/CreatureView";
+import IncantationView from "./views/IncantationView";
+import ItemView from "./views/ItemView";
+import LocationView from "./views/LocationView";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
@@ -36,21 +40,21 @@ const CheatSheet = () => {
             case 'ammos': 
                 return <AmmoView res = {responseData}/>
             case 'armors': 
-                return <ArmorsView res = {responseData}/>
+                return <ArmorView res = {responseData}/>
             case 'ashes': 
-                return <AshesView res = {responseData}/>
+                return <AshView res = {responseData}/>
             case 'bosses': 
                 return <BossView res = {responseData} />
             case 'classes': 
-                return <ClassesView res = {responseData}/>
+                return <ClassView res = {responseData}/>
             case 'creatures': 
-                return <p> Creatures stuff </p>
+                return <CreatureView res = {responseData}/>
             case 'incantations': 
-                return <p> Incantation stuff </p>
+                return <IncantationView res = {responseData}/>
             case 'items': 
-                return <p> Items stuff </p>
+                return <ItemView res = {responseData}/>
             case 'locations': 
-                return <p> Location stuff </p>
+                return <LocationView res = {responseData}/>
             case 'npcs': 
                 return <p> NPC stuff </p>
             case 'shields': 
