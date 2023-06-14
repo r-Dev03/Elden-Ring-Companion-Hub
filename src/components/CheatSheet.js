@@ -1,23 +1,12 @@
 import { useState, useEffect} from "react";
 import axios, { Axios } from "axios";
+import BossView from "./BossView";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
     const [categoryValue, setCategoryValue] = useState('ammos')
     const [responseData, setResponseData] = useState(null)
 
-    
-       const fetchData =  () => {
-        axios.get(`https://eldenring.fanapis.com/api/${categoryValue}?name=${inputValue}`)
-            .then(res => {
-                setResponseData(res.data.data)
-                console.log(responseData)
-            }) 
-            .catch(err => {
-                console.log(err)
-            })
-
-    }
 
 
 
@@ -37,9 +26,41 @@ const CheatSheet = () => {
             console.error(error);
         }
     }
-
-
-
+    
+    const renderView  = () => {
+        switch (categoryValue) {
+            case 'ammos': 
+                return <p> Ammos stuff </p>
+            case 'armors': 
+                return <p> Armor stuff </p>
+            case 'ashes': 
+                return <p> Ashes stuff </p>
+            case 'bosses': 
+                return <BossView res = {responseData} />
+            case 'classes': 
+                return <p> Classes stuff </p>
+            case 'creatures': 
+                return <p> Creatures stuff </p>
+            case 'incantations': 
+                return <p> Incantation stuff </p>
+            case 'items': 
+                return <p> Items stuff </p>
+            case 'locations': 
+                return <p> Location stuff </p>
+            case 'npcs': 
+                return <p> NPC stuff </p>
+            case 'shields': 
+                return <p> Shield stuff </p>
+            case 'sorceries': 
+                return <p> Sorcery stuff </p>
+            case 'spirits': 
+                return <p> Spirit stuff </p>
+            case 'talismans': 
+                return <p> Talisman stuff </p>
+            case 'weapons': 
+                return <p> Weapons stuff </p>
+        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -90,22 +111,9 @@ const CheatSheet = () => {
             </div>
         </form>
             <div className="data">
-            <img className="data-img" src={responseData != null || responseData != undefined ? responseData.image : ""}/>
-            <section className="data-info">
-                    {responseData ? 
-                        Object.keys(responseData).map((key, i) => {
-                            //Converting array propertie values to spread so they can render properly
-                            if(Array.isArray(responseData[key]) == true) {
-                                responseData[key] = [...responseData[key]]
-                            }
-                        return (
-                        <>
-                            <p key={i}> {key.toUpperCase()} : {responseData[key]}</p>
-                        </>
-                        )
-                    }): <p> Please try to be more specific with your search</p>}
-                        
-                </section>
+
+                    {renderView()} 
+                    
             </div>
 
         </div>

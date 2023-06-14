@@ -1,10 +1,12 @@
 
 import { useState } from "react";
 
-const BossView= (res) => {
+const BossView= ({res}) => {
     return (
         <>
-            <h1 Boss info> </h1>
+            <section className="data-info">
+                <img className="data-img" src={res!= null || res != undefined ? res.image : "" }/>
+            </section>
         </>
     )    
 }
