@@ -1,6 +1,10 @@
 import { useState, useEffect} from "react";
 import axios, { Axios } from "axios";
 import BossView from "./BossView";
+import AmmoView from "./AmmoView";
+import ArmorsView from "./ArmorsView";
+import AshesView from "./AshesView";
+import ClassesView from "./ClassesView";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
@@ -30,15 +34,15 @@ const CheatSheet = () => {
     const renderView  = () => {
         switch (categoryValue) {
             case 'ammos': 
-                return <p> Ammos stuff </p>
+                return <AmmoView res = {responseData}/>
             case 'armors': 
-                return <p> Armor stuff </p>
+                return <ArmorsView res = {responseData}/>
             case 'ashes': 
-                return <p> Ashes stuff </p>
+                return <AshesView res = {responseData}/>
             case 'bosses': 
                 return <BossView res = {responseData} />
             case 'classes': 
-                return <p> Classes stuff </p>
+                return <ClassesView res = {responseData}/>
             case 'creatures': 
                 return <p> Creatures stuff </p>
             case 'incantations': 
