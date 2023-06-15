@@ -9,6 +9,12 @@ import CreatureView from "./views/CreatureView";
 import IncantationView from "./views/IncantationView";
 import ItemView from "./views/ItemView";
 import LocationView from "./views/LocationView";
+import NPCView from "./views/NPCView";
+import ShieldView from "./views/ShieldView";
+import SorceryView from "./views/SorceryView";
+import SpiritView from "./views/SpiritView";
+import TalismanView from "./views/TalismanView";
+import WeaponView from "./views/WeaponView";
 
 const CheatSheet = () => {
     const [inputValue, setInputValue] = useState('')
@@ -56,17 +62,17 @@ const CheatSheet = () => {
             case 'locations': 
                 return <LocationView res = {responseData}/>
             case 'npcs': 
-                return <p> NPC stuff </p>
+                return <NPCView res = {responseData}/>
             case 'shields': 
-                return <p> Shield stuff </p>
+                return <ShieldView res = {responseData}/>
             case 'sorceries': 
-                return <p> Sorcery stuff </p>
+                return <SorceryView res={responseData}/>
             case 'spirits': 
-                return <p> Spirit stuff </p>
+                return <SpiritView res={responseData}/>
             case 'talismans': 
-                return <p> Talisman stuff </p>
+                return <TalismanView res={responseData}/>
             case 'weapons': 
-                return <p> Weapons stuff </p>
+                return <WeaponView res={responseData}/>
         }
     }
 
