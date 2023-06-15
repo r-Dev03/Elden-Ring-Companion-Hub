@@ -40,7 +40,7 @@ const CheatSheet = () => {
             console.error(error);
         }
     }
-    
+
     const renderView  = () => {
         switch (categoryValue) {
             case 'ammos': 
@@ -50,7 +50,7 @@ const CheatSheet = () => {
             case 'ashes': 
                 return <AshView res = {responseData}/>
             case 'bosses': 
-                return <BossView res = {responseData} />
+                return <BossView res = {responseData}/>
             case 'classes': 
                 return <ClassView res = {responseData}/>
             case 'creatures': 
@@ -66,13 +66,13 @@ const CheatSheet = () => {
             case 'shields': 
                 return <ShieldView res = {responseData}/>
             case 'sorceries': 
-                return <SorceryView res={responseData}/>
+                return <SorceryView res = {responseData}/>
             case 'spirits': 
-                return <SpiritView res={responseData}/>
+                return <SpiritView res = {responseData}/>
             case 'talismans': 
-                return <TalismanView res={responseData}/>
+                return <TalismanView res = {responseData}/>
             case 'weapons': 
-                return <WeaponView res={responseData}/>
+                return <WeaponView res = {responseData}/>
         }
     }
 

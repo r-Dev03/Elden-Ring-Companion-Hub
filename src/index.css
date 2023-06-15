@@ -388,12 +388,18 @@ textarea {
 }
 
 .data-info {
-
+    display: flex;
+    flex-direction: column;
 } 
 
-.data-info p{
+.data-info p, ul{
+    margin-top: 10px;
     padding: 10px 0 0 30px;
 } 
+
+.data-info ul li{
+   padding: 5px 0 5px 0; 
+}
 
 .data-img {
     width: 30%;
