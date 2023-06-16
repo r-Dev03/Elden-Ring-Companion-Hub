@@ -1,6 +1,4 @@
 
-import { useState } from "react";
-
 const ClassView= ({res}) => {
     return (
         <>

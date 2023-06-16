@@ -1,6 +1,4 @@
-
-
-import { useState } from "react";
+import React from "react"
 
 const ArmorsView= ({res}) => {
     return (

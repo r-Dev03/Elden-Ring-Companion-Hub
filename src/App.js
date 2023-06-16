@@ -2,7 +2,6 @@ import './index.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar';
-import { useState, useEffect } from 'react'
 import BossForm from './components/BossForm.js'
 import AreaForm from './components/AreaForm';
 import CraftingForm from './components/CraftingForm';

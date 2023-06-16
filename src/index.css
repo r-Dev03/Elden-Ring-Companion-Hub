@@ -212,6 +212,11 @@ a:link, a:visited, a:hover, a:active {
     padding: 3px 7px;
     font-size: 17px;
 }
+
+.form-control .btn {
+    width: 418px;
+}
+
 textarea {
     margin-bottom: 20px;
     height:150px;
@@ -335,8 +340,6 @@ textarea {
     cursor: pointer;
 }
 
-/* Table and log data */
-
 .table {
     display: flex;
     height: 80vh;
@@ -386,6 +389,7 @@ textarea {
     border-image-slice: 13 9 13 11 fill;
     border-image-repeat: stretch;
 }
+
 
 .data-info {
     display: flex;

@@ -1,5 +1,6 @@
-import { useState, useEffect} from "react";
-import axios, { Axios } from "axios";
+import { useState} from "react";
+import React from "react";
+import axios from "axios";
 import BossView from "./views/BossView"
 import AmmoView from "./views/AmmoView";
 import ArmorView from "./views/ArmorView";
@@ -31,48 +32,9 @@ const CheatSheet = () => {
             const filteredData = res.data.data.filter(obj => obj.name.toLowerCase().includes(inputVal.toLowerCase()));
             console.log(filteredData);
             setResponseData(filteredData[0])
-            Object.keys(responseData).map((key, i) => {
-                console.log(key)
-                console.log(responseData[key])
-            })
         } catch (error) {
             // Handle error
             console.error(error);
-        }
-    }
-
-    const renderView  = () => {
-        switch (categoryValue) {
-            case 'ammos': 
-                return <AmmoView res = {responseData}/>
-            case 'armors': 
-                return <ArmorView res = {responseData}/>
-            case 'ashes': 
-                return <AshView res = {responseData}/>
-            case 'bosses': 
-                return <BossView res = {responseData}/>
-            case 'classes': 
-                return <ClassView res = {responseData}/>
-            case 'creatures': 
-                return <CreatureView res = {responseData}/>
-            case 'incantations': 
-                return <IncantationView res = {responseData}/>
-            case 'items': 
-                return <ItemView res = {responseData}/>
-            case 'locations': 
-                return <LocationView res = {responseData}/>
-            case 'npcs': 
-                return <NPCView res = {responseData}/>
-            case 'shields': 
-                return <ShieldView res = {responseData}/>
-            case 'sorceries': 
-                return <SorceryView res = {responseData}/>
-            case 'spirits': 
-                return <SpiritView res = {responseData}/>
-            case 'talismans': 
-                return <TalismanView res = {responseData}/>
-            case 'weapons': 
-                return <WeaponView res = {responseData}/>
         }
     }
 
@@ -126,8 +88,22 @@ const CheatSheet = () => {
         </form>
             <div className="data">
 
-                    {renderView()} 
-                    
+                {categoryValue === 'ammos' && <AmmoView res={responseData} />}
+                {categoryValue === 'armors' && <ArmorView res={responseData} />}
+                {categoryValue === 'ashes' && <AshView res={responseData} />}
+                {categoryValue === 'bosses' && <BossView res={responseData} />}
+                {categoryValue === 'classes' && <ClassView res={responseData} />}
+                {categoryValue === 'creatures' && <CreatureView res={responseData} />}
+                {categoryValue === 'incantations' && <IncantationView res={responseData} />}
+                {categoryValue === 'items' && <ItemView res={responseData} />}
+                {categoryValue === 'locations' && <LocationView res={responseData} />}
+                {categoryValue === 'npcs' && <NPCView res={responseData} />}
+                {categoryValue === 'shields' && <ShieldView res={responseData} />}
+                {categoryValue === 'sorceries' && <SorceryView res={responseData} />}
+                {categoryValue === 'spirits' && <SpiritView res={responseData} />}
+                {categoryValue === 'talismans' && <TalismanView res={responseData} />}
+                {categoryValue === 'weapons' && <WeaponView res={responseData} />}
+
             </div>
 
         </div>
