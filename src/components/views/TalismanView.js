@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const TalismanView= ({res}) => {
+const TalismanView= ({ res }) => {
     return (
         <>
             {res ?  

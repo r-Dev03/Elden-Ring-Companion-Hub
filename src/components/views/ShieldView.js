@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const ShieldView= ({res}) => {
+const ShieldView= ({ res }) => {
     return (
         <>
             {res ?  

@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const ArmorsView= ({res}) => {
+const ArmorsView= ({ res }) => {
     return (
         <>
             {res ?  

@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const LocationView= ({res}) => {
+const LocationView= ({ res }) => {
     return (
         <>
             {res ?  

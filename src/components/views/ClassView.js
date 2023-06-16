@@ -1,5 +1,7 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const ClassView= ({res}) => {
+const ClassView= ({ res }) => {
     return (
         <>
             {res ?  

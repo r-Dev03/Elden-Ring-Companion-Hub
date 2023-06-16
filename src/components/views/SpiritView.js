@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const SpiritView= ({res}) => {
+const SpiritView= ({ res }) => {
     return (
         <>
             {res ?  

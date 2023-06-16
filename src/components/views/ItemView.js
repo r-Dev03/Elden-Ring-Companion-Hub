@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const ItemView = ({res}) => {
+const ItemView = ({ res }) => {
     return (
         <>
             {res ?  

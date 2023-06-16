@@ -1,6 +1,7 @@
 import React from "react"
+import PropTypes from 'prop-types'
 
-const CreatureView = ({res}) => {
+const CreatureView = ({ res }) => {
     return (
         <>
             {res ?  
