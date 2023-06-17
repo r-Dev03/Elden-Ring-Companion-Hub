@@ -6,8 +6,8 @@ const WeaponView = ({ res }) => {
       <p> Name: {res.name} </p>
       <p> Category: {res.category} </p>
       <p> Weight: {res.weight} </p>
-      <p> Effects: {res.effects} </p>
       <p> Description: {res.description} </p>
+        <div className="data-stats">
       <ul>
         {' '}
         Attack:
@@ -39,11 +39,12 @@ const WeaponView = ({ res }) => {
           return (
             <li key={index}>
               {' '}
-              {el.name} {el.scaling}
+              {el.scaling} {el.name}
             </li>
           );
         })}
       </ul>
+      </div>
       </div>
     </section>
   );

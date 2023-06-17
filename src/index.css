@@ -494,6 +494,10 @@ ul {
   border: solid 3px whitesmoke;
 }
 
+.data-stats {
+  display: flex;
+}
+
 #Categories,
 .search {
   margin: 10px 0 10px 0;

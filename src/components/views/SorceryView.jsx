@@ -1,7 +1,7 @@
 const SorceryView = ({ res }) => {
   return (
     <section className="data-info">
-      <img className="data-img" src={res.image} alt="img" />
+      <img className="data-img" src={res.image} alt="No image available" />
       <div className="data-text">
       <p> Name: {res.name} </p>
       <p> Type: {res.type} </p>
