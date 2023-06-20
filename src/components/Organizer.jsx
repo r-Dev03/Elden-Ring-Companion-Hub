@@ -78,7 +78,7 @@ const Organizer = () => {
               );
             })
           ) : (
-            <label className="tableLabel">No Boss Strategies? Git Gud</label>
+            null
           )}
         </tbody>
         <tbody>
@@ -125,7 +125,7 @@ const Organizer = () => {
               );
             })
           ) : (
-            <label className="tableLabel">No Area Notes? Git Gud</label>
+            null
           )}
         </tbody>
         <tbody>

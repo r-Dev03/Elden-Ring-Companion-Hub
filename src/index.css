@@ -428,7 +428,7 @@ textarea {
 
 .tableLabel {
   display: inline-block;
-  width: 95%;
+  width: 100%;
   cursor: pointer;
   padding-left: 2%;
   padding-top: 1%;
@@ -464,7 +464,6 @@ textarea {
 .data-info {
   display: flex;
   flex-wrap: nowrap;
-  border: solid 2px blue;
 }
 
 .data-info p,
@@ -484,24 +483,42 @@ ul {
 .data-text {
   width: 50%;
   margin: 30px 0 0 30px;
-  border: solid 3px red;
 }
 
 .data-img {
   width: 30%;
   height: 200px;
   margin: 30px 0 0 30px;
-  border: solid 3px whitesmoke;
 }
 
 .data-stats {
   display: flex;
 }
 
+.none {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: inherit;
+  color: gold;
+}
+
 #Categories,
 .search {
   margin: 10px 0 10px 0;
+  width: 100%;
 }
+
+.category {
+}
+
+#cheat-form {
+    
+}
+
+
+
 
 /* Footer */
 
