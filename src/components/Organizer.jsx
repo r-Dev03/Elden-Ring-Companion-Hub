@@ -21,7 +21,7 @@ const Organizer = () => {
     console.log(editMode);
   }
 
-  //Deleting log function through filtering.
+  //Deleting log through filtering.
   function deleteLog(id, logType) {
     const logs = JSON.parse(window.localStorage.getItem(logType));
     const filteredLogs = logs.filter((el) => el.id != id);
