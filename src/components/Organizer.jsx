@@ -172,7 +172,7 @@ const Organizer = () => {
               );
             })
           ) : (
-            <label className="tableLabel">No Crafting Recipes? Git Gud</label>
+            <label className="tableLabel"></label>
           )}
         </tbody>
       </table>

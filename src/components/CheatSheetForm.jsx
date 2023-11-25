@@ -10,7 +10,6 @@ const CheatSheetForm = ({
   return (
     <form className="form" id="cheat-form" onSubmit={handleSubmit}>
       <div className="form-control">
-        <label htmlFor="Type">Category:</label>
 
         <select
           name="Category"
@@ -36,7 +35,6 @@ const CheatSheetForm = ({
           <option value="weapons">Weapons</option>
         </select>
 
-        <label className="search">Search:</label>
         <input
           type="text"
           placeholder="location, boss, items..."

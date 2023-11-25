@@ -50,7 +50,7 @@ const CheatSheetView = ({ category, responseData }) => {
     case 'weapons':
       return <WeaponView res={responseData} />;
     default:
-      return <div className='none'>No category selected</div>;
+      return <div className='none'></div>;
   }
 };
 

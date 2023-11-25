@@ -508,9 +508,10 @@ ul {
 .search {
   margin: 10px 0 10px 0;
   width: 100%;
+  text-align: center;
 }
 
-.category {
+.Category {
 }
 
 #cheat-form {
