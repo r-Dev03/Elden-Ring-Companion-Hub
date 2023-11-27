@@ -81,6 +81,8 @@ const CheatSheet = () => {
     }
   };
 
+	
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const [category, inputText] = e.target;
