@@ -85,9 +85,11 @@ const CheatSheet = () => {
 		axios.get(`https://eldenring.fanapis.com/api/${category}?name=${text}`)
 			.then(res => {
 				console.log(res.data.data)
-				setResponseData(res.data.data[0])
-				setDataCategory(category)
-				console.log(responseData)
+				if(res.data.data.length > 0) {
+					setResponseData(res.data.data[0])
+					setDataCategory(category)
+					console.log(responseData)
+				}
 			}) 
 			.catch(err => {
 				console.log(err)

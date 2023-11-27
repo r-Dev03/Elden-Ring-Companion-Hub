@@ -506,16 +506,17 @@ ul {
 
 #Categories,
 .search {
-  margin: 10px 0 10px 0;
-  width: 100%;
+  margin: 10px 0 10px 4px;
+  width: 418px;
   text-align: center;
 }
-
-.Category {
+input {
+	text-align: center;
 }
 
-#cheat-form {
-    
+
+#cheat-form{
+
 }
 
 

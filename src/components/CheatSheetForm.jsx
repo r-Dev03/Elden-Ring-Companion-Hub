@@ -37,7 +37,6 @@ const CheatSheetForm = ({
 
         <input
           type="text"
-          placeholder="location, boss, items..."
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
