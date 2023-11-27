@@ -81,6 +81,20 @@ const CheatSheet = () => {
     }
   };
 
+	const fetchData =  async (category, text) => {
+		axios.get(`https://eldenring.fanapis.com/api/${category}?name=${text}`)
+			.then(res => {
+				console.log(res.data.data)
+				setResponseData(res.data.data[0])
+				setDataCategory(category)
+				console.log(responseData)
+			}) 
+			.catch(err => {
+				console.log(err)
+		})
+
+	}
+
 	
 
   const handleSubmit = async (e) => {
@@ -93,7 +107,7 @@ const CheatSheet = () => {
       alert('Your gonna need it...');
       return;
     }
-    await fetchAndFilter(category.value, inputText.value);
+    await fetchData(category.value, inputText.value);
     setInputValue('');
   };
 
