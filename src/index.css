@@ -510,12 +510,12 @@ ul {
   width: 418px;
   text-align: center;
 }
-input {
-	text-align: center;
-}
 
 
 #cheat-form{
+	input {
+		text-align: center;
+	}
 
 }
 

@@ -36,6 +36,7 @@ const BossForm = ({ preLoadedData }) => {
     setBossInfo('');
     setBossAttackPatterns('');
     setBossCounterAttacks('');
+
   };
 
   function bossLog() {
