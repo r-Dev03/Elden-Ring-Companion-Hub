@@ -16,7 +16,10 @@ const Organizer = () => {
   }
 
   //Toggling between specific form and actual view of data.
-  function toggleEditMode() {
+  function toggleEditMode(opt) {
+		if (opt) {
+			setEditMode(false)
+		}
     setEditMode(!editMode);
     console.log(editMode);
   }
@@ -59,7 +62,10 @@ const Organizer = () => {
                       ></button>
                       <button
                         className="close-btn"
-                        onClick={() => toggleLog(el.id)}
+                        onClick={() => {
+							toggleLog(el.id)
+							toggleEditMode(false)
+						}							}
                       ></button>
                     </div>
                     {editMode == false ? (
