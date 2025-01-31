@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 set -e
-if [[ ! -d "/Users/r-dev/dev/ed-strategizer" ]]; then
+if [[ ! -d "/Users/r-dev/dev/er-strategizer" ]]; then
   echo "Cannot find source directory; Did you move it?"
-  echo "(Looking for "/Users/r-dev/dev/ed-strategizer")"
+  echo "(Looking for "/Users/r-dev/dev/er-strategizer")"
   echo 'Cannot force reload with this script - use "direnv reload" manually and then try again'
   exit 1
 fi
 
 # rebuild the cache forcefully
-_nix_direnv_force_reload=1 direnv exec "/Users/r-dev/dev/ed-strategizer" true
+_nix_direnv_force_reload=1 direnv exec "/Users/r-dev/dev/er-strategizer" true
 
 # Update the mtime for .envrc.
 # This will cause direnv to reload again - but without re-building.
-touch "/Users/r-dev/dev/ed-strategizer/.envrc"
+touch "/Users/r-dev/dev/er-strategizer/.envrc"
 
 # Also update the timestamp of whatever profile_rc we have.
 # This makes sure that we know we are up to date.
-touch -r "/Users/r-dev/dev/ed-strategizer/.envrc" "/Users/r-dev/dev/ed-strategizer/.direnv"/*.rc
+touch -r "/Users/r-dev/dev/er-strategizer/.envrc" "/Users/r-dev/dev/er-strategizer/.direnv"/*.rc
