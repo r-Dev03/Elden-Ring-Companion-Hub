@@ -32,7 +32,7 @@ Elden Ring Companion Hub is a purely client-side fan companion app built for fel
 ### Component Structure
 ```
 ┌───────────────────────────────────┐
-│              App.jsx              │
+│            App.jsx                │
 └──────────────┬────────────────────┘
                │
 ┌──────────────▼────────────────────┐
