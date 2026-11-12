@@ -6,17 +6,37 @@
 [![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
 [![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat&logo=axios&logoColor=white)](https://axios-http.com/)
 
-<!-- Add screenshot or gif here when available -->
+**[Live Demo](https://elden-ring-companion-hub.netlify.app/)**
+
+![Home screen](screenshots/home.jpg)
 
 ## Overview
 
-Elden Ring Companion Hub is a purely client-side fan companion app built for fellow Tarnished. Users can log and manage personal notes and strategies across bosses, areas, items, and crafting, with live search powered by the Elden Ring open-source API. All data is persisted locally via localStorage, requiring no backend or account.
+Elden Ring Companion Hub is a purely client-side fan companion app built for fellow Tarnished. Users can log and manage personal notes and strategies across bosses, areas, crafting, and a personal cheat sheet, with live search powered by the Elden Ring open-source API. All data is persisted locally via localStorage, requiring no backend or account.
 
 **Core Features:**
-- Log and manage notes and strategies for bosses, areas, items, and crafting
-- Live search via the Elden Ring open-source API
-- Data persistence with localStorage — no account required
+- Log and manage notes and strategies across 4 categories: bosses, areas, crafting, and a cheat sheet
+- Live search across 15 Elden Ring API categories for lore, drops, and locations
+- Typo-tolerant client-side filtering and pagination, replacing the API's exact-match search
+- Data persistence with localStorage, no account required
 - UI designed to match the aesthetic of the Lands Between
+
+## Screenshots
+
+### Boss Log
+Saved boss entries are listed for quick access.
+
+![Boss list](screenshots/boss-list.jpg)
+
+### Logging a Strategy
+Each entry captures the boss type, attack patterns, how to counter them, and general notes.
+
+![Boss log form](screenshots/boss-form.jpg)
+
+### Viewing and Editing an Entry
+Open any saved entry to review it, edit it, or delete it.
+
+![Boss entry detail](screenshots/boss-detail.jpg)
 
 ## Tech Stack
 
@@ -58,8 +78,9 @@ Elden Ring Companion Hub is a purely client-side fan companion app built for fel
 - Loaded from localStorage on app mount
 
 **Search**
-- User query sent to Elden Ring open-source API via Axios
-- Results rendered as cards in real time
+- The Elden Ring API only supports exact-match name lookups, so results are fetched once per category with Axios
+- Queries are then filtered client-side with typo-tolerant matching, so near-misses still return results
+- Results are paginated and rendered as cards
 
 ## Installation
 
@@ -87,12 +108,12 @@ Access the application at: `http://localhost:3000`
 
 ### Search
 - Use the search bar to query bosses, areas, items, and crafting materials
-- Results are fetched live from the Elden Ring open-source API and displayed as cards
+- Slight misspellings still match, and results are split into pages
 
 ### Notes & Strategies
-- Add notes tied to any boss, area, or item
-- Notes are saved automatically to localStorage and persist across sessions
-- Edit or delete notes at any time
+- Add entries under bosses, areas, crafting, or the cheat sheet
+- Entries are saved automatically to localStorage and persist across sessions
+- Edit or delete entries at any time
 
 ## License
 
